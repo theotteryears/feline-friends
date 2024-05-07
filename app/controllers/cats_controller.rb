@@ -5,38 +5,41 @@ class CatsController < ApplicationController
   end
 
   def show
-    authorize @cats
     @cat = Cat.find(params[:id])
+    authorize @cat
   end
 
   def new
-    authorize @cats
     @cat = Cat.new
+    authorize @cat
   end
 
   def create
-    authorize @cats
     @cat = Cat.new(cat_params)
-    @cat.save
     @cat.user = current_user
-    redirect_to cat_path(@cat)
+    if @cat.save
+      redirect_to cat_path(@cat)
+    else
+      render :new, status: :unprocessable_entity
+    end
+    authorize @cat
   end
 
   def edit
-    authorize @cat
     @cat = Cat.find(params[:id])
+    authorize @cat
   end
 
   def update
-    authorize @cat
     @cat = Cat.find(params[:id])
     @cat.update(cat_params)
     redirect_to cat_path(@cat)
+    authorize @cat
   end
 
   def destroy
-    authorize @cat
     @cat = Cat.find(params[:id])
+    authorize @cat
     @cat.destroy
     redirect_to cats_path, status: :see_other
   end
