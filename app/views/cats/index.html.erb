@@ -5,3 +5,4 @@
   <%= link_to "Show", cat_path(cat) %>
 <%end%>
 <%= link_to "New cat", new_cat_path if policy(Cat).new? %>
+  <%= link_to "back", root_path %>
