@@ -3,3 +3,4 @@
   <p><%= cat.name %></p>
   <p><%= cat.details%></p>
 <%end%>
+<%= link_to "New cat", new_cat_path if policy(Cat).new? %>
