@@ -9,6 +9,10 @@
 #   end
 Cat.destroy_all
 User.destroy_all
+puts 'creating users'
 User.create!(email: "admin@felinefriend.com", password: "123456", first_name: "Admin", last_name: "Admin")
-
+puts 'creating cats'
 Cat.create!(user_id: 1, name: "Kitty", details: "cute")
+puts 'creating matches'
+Match.create!(user_id: 1, cat_id: 1)
+puts 'finished seeding'
