@@ -2,5 +2,6 @@
 <% @cats.each do |cat| %>
   <p><%= cat.name %></p>
   <p><%= cat.details%></p>
+  <%= link_to "Show", cat_path(cat) %>
 <%end%>
 <%= link_to "New cat", new_cat_path if policy(Cat).new? %>
