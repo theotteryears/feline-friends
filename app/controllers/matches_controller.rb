@@ -21,11 +21,14 @@ class MatchesController < ApplicationController
   def create_a_match(user, cat)
     @match = Match.find_by(cat: cat, user: user)
     if @match.present?
+      authorize @match
       @match.update(accepted: true)
       # redirect_to chatroom_path
     else
       @match = Match.new(user: user, cat: cat)
+      authorize @match
       @match.save
+      redirect_to cat_matches_path
     end
   end
 

@@ -7,11 +7,15 @@ Rails.application.routes.draw do
   get "/sitters", to: "sitters#index"
 
   resources :cats do
-    resources :matches, only: [:create]
+    resources :matches, only: [ :create]
+    resources :cat_tags, only: [ :new, :create ]
   end
   get "/cats/:cat_id/matches/", to: "matches#create"
   resources :users, only: [] do
     resources :matches, only: [:create]
+  end
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
   end
 
 
