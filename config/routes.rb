@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     resources :cat_tags, only: [ :new, :create ]
   end
   get "/cats/:cat_id/matches/", to: "matches#create"
-  resources :users, only: [] do
+
+  resources :users do
     resources :matches, only: [:index, :create]
   end
   resources :chatrooms, only: :show do

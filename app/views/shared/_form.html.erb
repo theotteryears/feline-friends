@@ -1,9 +1,11 @@
-<h2>Add my <%= pluralize "cat"</h2>
-<%= simple_form_for(@cat) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :details %>
-  <%= f.input :img_1, as: :file %>
-  <%= f.input :img_2, as: :file %>
-  <%= f.input :img_3, as: :file %>
-  <%= f.submit %>
-<% end %>
+<h2 class="text-center">Add my cat</h2>
+<div class="text-start">
+  <%= simple_form_for(@cat) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :details %>
+    <%= f.input :img_1, as: :file %>
+    <%= f.input :img_2, as: :file %>
+    <%= f.input :img_3, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>

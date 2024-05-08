@@ -1,0 +1,11 @@
+<div class="container mt-3 text-center">
+  <h2>Edit the cat</h2>
+  <%= simple_form_for(@cat) do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :city %>
+    <%= f.input :details %>
+    <%= f.file_field :img, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
