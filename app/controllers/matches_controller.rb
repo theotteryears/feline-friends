@@ -1,16 +1,35 @@
 class MatchesController < ApplicationController
 
   def create
-    @cat = Cat.find(params[:cat_id])
-
-    @match = Match.new
-    @match.cat = @cat
-    # cat_owner = @cat.user
-    @match.user = current_user
-    if @match.save
-      redirect_to cat_matches_path
-    else
-      render :new, status: :unprocessable_entity
+    # if I am the owner
+    if params[:user_id].present?
+      @user = User.find(params[:user_id])
+      @cats = current_user.cats
+      @cats.each do |cat|
+        create_a_match(@user, cat)
+      end
+    # if I am the sitter
+    elsif params[:cat_id].present?
+      @user = current_user
+      @cat = Cat.find(params[:cat_id])
+      create_a_match(@user, @cat)
     end
+  end
+
+  private
+
+  def create_a_match(user, cat)
+    @match = Match.find_by(cat: cat, user: user)
+    if @match.present?
+      @match.update(accepted: true)
+      # redirect_to chatroom_path
+    else
+      @match = Match.new(user: user, cat: cat)
+      @match.save
+    end
+  end
+
+  def match_params
+    params.require(:match).permit(:user_id, :cat_id, :accepted)
   end
 end

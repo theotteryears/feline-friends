@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_131036) do
     t.bigint "cat_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "accepted", default: false
     t.index ["cat_id"], name: "index_matches_on_cat_id"
     t.index ["user_id"], name: "index_matches_on_user_id"
   end
