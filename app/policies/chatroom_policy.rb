@@ -1,4 +1,4 @@
-class MatchPolicy < ApplicationPolicy
+class ChatroomPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     # def resolve
@@ -6,11 +6,7 @@ class MatchPolicy < ApplicationPolicy
     # end
   end
 
-  def create?
-    true
-  end
-
-  def create_a_match?
+  def show?
     true
   end
 end
