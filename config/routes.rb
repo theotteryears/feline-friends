@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "cats#index"
+  root to: "pages#home"
+
+  get "/profile", to: "pages#profile"
+  get "/sitters", to: "sitters#index"
 
   resources :cats do
     resources :matches, only: [ :create]
     resources :cat_tags, only: [ :new, :create ]
   end
   get "/cats/:cat_id/matches/", to: "matches#create"
-
-
+  resources :users, only: [] do
+    resources :matches, only: [:create]
+  end
 
 
 
