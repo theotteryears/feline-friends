@@ -2,6 +2,7 @@ puts "Cleaning database..."
 
 User.destroy_all
 Cat.destroy_all
+Match.destroy_all
 
 puts 'Creating users'
 
