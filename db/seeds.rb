@@ -8,8 +8,14 @@ Match.delete_all
 
 puts 'Creating users'
 
-u1 = User.create!(role: 0, email: "sitter@test.com", password: "123456", first_name: "Cat", last_name: "Sitter", details: "Hi, I am a cat sitter and I love cats")
+u1 = User.new(role: 0, email: "sitter@test.com", password: "123456", first_name: "Cat", last_name: "Sitter", details: "Hi, I am a cat sitter and I love cats")
+file = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715178844/tran-mau-tri-tam-Fst4SmneRU4-unsplash_m04sde.jpg")
+u1.img.attach(io: file, filename: "tran-mau-tri-tam-Fst4SmneRU4-unsplash_m04sde.jpg", content_type: "image/jpg")
+u1.save
 u2 = User.create!(role: 1, email: "owner@test.com", password: "123456", first_name: "Cat", last_name: "Owner", details: "Hi, I am a cat owner and I really need to find a cat sitter")
+file = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715178845/laura-chouette-RhvEChrPHQE-unsplash_mtfnkv.jpg")
+u2.img.attach(io: file, filename: "laura-chouette-RhvEChrPHQE-unsplash_mtfnkv.jpg", content_type: "image/jpg")
+u2.save
 
 puts 'Creating cats'
 
