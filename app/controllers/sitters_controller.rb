@@ -1,8 +1,8 @@
 class SittersController < ApplicationController
 
   def index
-    @sitters = User.where(role: 0)
     @sitters = policy_scope(User)
+    @sitters = User.where(role: "cat_sitter")
   end
 
 end
