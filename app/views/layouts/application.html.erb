@@ -11,7 +11,8 @@
   </head>
 
   <body>
-      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
+    <div class="container mt-3">
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-primary" %>
       <div class="content-container">
         <%= yield %>
       </div>
@@ -19,9 +20,10 @@
       <div class="flashes-container">
         <%= render "shared/flashes" %>
       </div>
+    </div>
 
-      <div class="footer-container">
-        <%= render "shared/footer" %>
-      </div>
+    <div class="footer-container">
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>
