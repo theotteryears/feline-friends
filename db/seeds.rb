@@ -1,18 +1,22 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-Cat.destroy_all
+puts "Cleaning database..."
+
 User.destroy_all
-puts 'creating users'
-User.create!(email: "admin@felinefriend.com", password: "123456", first_name: "Admin", last_name: "Admin")
-puts 'creating cats'
-Cat.create!(user_id: 1, name: "Kitty", details: "cute")
-puts 'creating matches'
-Match.create!(user_id: 1, cat_id: 1)
-puts 'finished seeding'
+Cat.destroy_all
+Match.destroy_all
+
+puts 'Creating users'
+
+User.create!(email: "sitter@test.com", password: "123456", first_name: "Cat", last_name: "Sitter", details: "Hi, I am a cat sitter and I love cats")
+User.create!(email: "owner@test.com", password: "123456", first_name: "Cat", last_name: "Owner", details: "Hi, I am a cat owner and I really need to find a cat sitter")
+
+puts 'Creating cats'
+
+Cat.create!(user_id: 2, name: "Kitty", details: "Cute")
+Cat.create!(user_id: 2, name: "Bruno", details: "Full of rage")
+
+# puts 'Creating matches'
+
+# Match.create!(user_id: 1, cat_id: 1)
+# Match.create!(user_id: 1, cat_id: 2)
+
+puts 'Finished seeding'
