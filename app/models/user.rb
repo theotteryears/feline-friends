@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :cats, dependent: :destroy
   has_many :matches, dependent: :destroy
+  has_one_attached :img
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
