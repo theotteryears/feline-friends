@@ -5,6 +5,10 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <%= f.input :role, collection: User.roles.keys, as: :radio_buttons,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "role" }%>
       <%= f.input :first_name,
                   required: true,
                   autofocus: true,

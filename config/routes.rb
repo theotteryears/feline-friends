@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+
+  root to: "cats#index"
 
   resources :cats do
     resources :matches, only: [ :create]
   end
   get "/cats/:cat_id/matches/", to: "matches#create"
+
+
+
+
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
