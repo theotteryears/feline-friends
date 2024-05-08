@@ -3,7 +3,7 @@
   <% @cats.each do |cat| %>
     <div class="container mb-5">
       <h2><%= cat.name %></h2>
-      <%= cl_image_tag cat.img_1.key %>
+      <%= image_tag cat.img_1.key %>
       <p><%= cat.details%></p>
       <%= link_to "Show this cat", cat_path(cat), class: "btn btn-primary" %>
     </div>
