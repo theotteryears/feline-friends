@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   root to: "cats#index"
 
   resources :cats do
-    resources :matches, only: [ :create]
+    resources :matches, only: [:create]
   end
   get "/cats/:cat_id/matches/", to: "matches#create"
-
-
+  resources :users, only: [] do
+    resources :matches, only: [:create]
+  end
 
 
 

@@ -6,4 +6,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum role: { cat_sitter: 0, cat_owner: 1 }
+  def owner?
+    role == 1
+  end
+
+  def sitter?
+    role == 0
+  end
 end
