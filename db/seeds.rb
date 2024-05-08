@@ -14,9 +14,9 @@ puts 'Creating cats'
 Cat.create!(user_id: 2, name: "Kitty", details: "Cute")
 Cat.create!(user_id: 2, name: "Bruno", details: "Full of rage")
 
-puts 'Creating matches'
+# puts 'Creating matches'
 
-Match.create!(user_id: 1, cat_id: 1)
-Match.create!(user_id: 1, cat_id: 2)
+# Match.create!(user_id: 1, cat_id: 1)
+# Match.create!(user_id: 1, cat_id: 2)
 
 puts 'Finished seeding'
