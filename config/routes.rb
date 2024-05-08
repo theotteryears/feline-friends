@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "cats#index"
+  root to: "pages#home"
+
+  get "/profile", to: "pages#profile"
+  get "/sitters", to: "sitters#index"
 
   resources :cats do
     resources :matches, only: [ :create]
