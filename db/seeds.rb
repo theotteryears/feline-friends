@@ -17,27 +17,27 @@ cat = Cat.new(user: u2, name: "George", details: "Cute")
 file1 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715159584/george.jpg")
 cat.img_1.attach(io: file1, filename: "george.jpg", content_type: "image/jpg")
 file2 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715159405/20190513_165900_IMG_0552_vtkfsc.jpg")
-cat.img_1.attach(io: file2, filename: "20190513_165900_IMG_0552_vtkfsc.jpg", content_type: "image/jpg")
+cat.img_2.attach(io: file2, filename: "20190513_165900_IMG_0552_vtkfsc.jpg", content_type: "image/jpg")
 file3 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171938/20240227_183859_ehviep.jpg")
-cat.img_1.attach(io: file3, filename: "20240227_183859_ehviep.jpg", content_type: "image/jpg")
+cat.img_3.attach(io: file3, filename: "20240227_183859_ehviep.jpg", content_type: "image/jpg")
 cat.save
 
 cat = Cat.new(user: u2, name: "Leia", details: "Shy but sweet")
 file1 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715162028/leia.jpg")
 cat.img_1.attach(io: file1, filename: "leia.jpg", content_type: "image/jpg")
 file2 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171589/IMG-20210619-WA0000_mc1lql.jpg")
-cat.img_1.attach(io: file2, filename: "IMG-20210619-WA0000_mc1lql.jpg", content_type: "image/jpg")
+cat.img_2.attach(io: file2, filename: "IMG-20210619-WA0000_mc1lql.jpg", content_type: "image/jpg")
 file3 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171945/IMG-20240115-WA0003_uds5er.jpg")
-cat.img_1.attach(io: file3, filename: "IMG-20240115-WA0003_uds5er.jpg", content_type: "image/jpg")
+cat.img_3.attach(io: file3, filename: "IMG-20240115-WA0003_uds5er.jpg", content_type: "image/jpg")
 cat.save
 
 cat = Cat.new(user: u2, name: "Flower", details: "A beautiful fluffy cat")
 file1 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171946/IMG-20240419-WA0010_orqowo.jpg")
 cat.img_1.attach(io: file1, filename: "IMG-20240419-WA0010_orqowo.jpg", content_type: "image/jpg")
 file2 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171946/IMG-20240419-WA0012_y0sgfj.jpg")
-cat.img_1.attach(io: file2, filename: "IMG-20240419-WA0012_y0sgfj.jpg", content_type: "image/jpg")
+cat.img_2.attach(io: file2, filename: "IMG-20240419-WA0012_y0sgfj.jpg", content_type: "image/jpg")
 file3 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171946/IMG-20240419-WA0016_ztpepn.jpg")
-cat.img_1.attach(io: file3, filename: "IMG-20240419-WA0016_ztpepn.jpg", content_type: "image/jpg")
+cat.img_3.attach(io: file3, filename: "IMG-20240419-WA0016_ztpepn.jpg", content_type: "image/jpg")
 cat.save
 # puts 'Creating matches'
 
