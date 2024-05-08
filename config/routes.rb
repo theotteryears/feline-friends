@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :cats do
     resources :matches, only: [ :create]
+    resources :cat_tags, only: [ :new, :create ]
   end
   get "/cats/:cat_id/matches/", to: "matches#create"
 
