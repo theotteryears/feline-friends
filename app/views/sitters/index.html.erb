@@ -1,7 +1,13 @@
 <div class="container text-center">
   <div class="text-center">
-    <%= link_to "Add my cat", new_cat_path, class: "btn btn-primary" %>
+  <div  data-controller="modal">
+    <button data-action="click->modal#open" class="btn btn-outline-primary">Add Cat</button>
+    <dialog data-modal-target="modal">
+      <%= render "shared/form", cat: @cat %>
+      <button data-action="click->modal#close" class="btn btn-outline-primary">close</button>
+    </dialog>
   </div>
+
 
   <div class="cards">
     <% @sitters.each do |sitter| %>
