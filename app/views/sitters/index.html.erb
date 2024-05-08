@@ -1,2 +1,26 @@
-<h1>Sitters Page</h1>
-<%= @sitters %>
+<div class="container text-center">
+  <div class="text-center">
+    <%= link_to "Add my cat", new_cat_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="cards">
+    <% @sitters.each do |sitter| %>
+      <div class="card-trip">
+        <div class="card-trip-infos">
+          <div>
+            <h1><%= sitter.first_name.capitalize %> <%= sitter.last_name.capitalize %></h1>
+          </div>
+          <p>
+            <br><%= sitter.details %>
+            <br><%= sitter.email %>
+            <br>Rating ???
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-center">
+    <%= link_to "Home", root_path, class: "btn btn-primary" %>
+  </div>
+</div>
