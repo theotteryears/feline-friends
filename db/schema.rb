@@ -64,6 +64,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_134017) do
     t.index ["user_id"], name: "index_cats_on_user_id"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "match_id", null: false
+    t.index ["match_id"], name: "index_chatrooms_on_match_id"
+  end
+
   create_table "matches", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "cat_id", null: false
@@ -72,6 +80,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_134017) do
     t.boolean "accepted", default: false
     t.index ["cat_id"], name: "index_matches_on_cat_id"
     t.index ["user_id"], name: "index_matches_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -102,6 +120,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_134017) do
   add_foreign_key "cat_tags", "cats"
   add_foreign_key "cat_tags", "tags"
   add_foreign_key "cats", "users"
+  add_foreign_key "chatrooms", "matches"
   add_foreign_key "matches", "cats"
   add_foreign_key "matches", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
 end

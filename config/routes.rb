@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     resources :matches, only: [:create]
   end
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
 
 
