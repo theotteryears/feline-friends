@@ -2,12 +2,11 @@ puts "Cleaning database..."
 
 User.destroy_all
 Cat.destroy_all
-Match.destroy_all
 
 puts 'Creating users'
 
-User.create!(email: "sitter@test.com", password: "123456", first_name: "Cat", last_name: "Sitter", role: 0, details: "Hi, I am a cat sitter and I love cats")
-User.create!(email: "owner@test.com", password: "123456", first_name: "Cat", last_name: "Owner", role: 1, details: "Hi, I am a cat owner and I really need to find a cat sitter")
+User.create!(email: "sitter@test.com", password: "123456", first_name: "Cat", last_name: "Sitter", details: "Hi, I am a cat sitter and I love cats")
+User.create!(email: "owner@test.com", password: "123456", first_name: "Cat", last_name: "Owner", details: "Hi, I am a cat owner and I really need to find a cat sitter")
 
 puts 'Creating cats'
 
