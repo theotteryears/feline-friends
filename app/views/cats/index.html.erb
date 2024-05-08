@@ -3,9 +3,15 @@
   <% @cats.each do |cat| %>
     <div class="container mb-5">
       <h2><%= cat.name %></h2>
-      <%= cl_image_tag(cat.img_1.key, height: 300, width: 300)%>
-      <%= cl_image_tag(cat.img_2.key, height: 300, width: 300)%>
-      <%= cl_image_tag(cat.img_3.key, height: 300, width: 300)%>
+      <% if cat.img_1.attached? %>
+        <%= cl_image_tag(cat.img_1.key, height: 300, width: 300)%>
+      <% end %>
+      <% if cat.img_2.attached? %>
+        <%= cl_image_tag(cat.img_2.key, height: 300, width: 300)%>
+      <% end %>
+      <% if cat.img_3.attached? %>
+        <%= cl_image_tag(cat.img_3.key, height: 300, width: 300)%>
+      <% end %>
       <p><%= cat.details%></p>
       <%= link_to "Show this cat", cat_path(cat), class: "btn btn-primary" %>
     </div>
