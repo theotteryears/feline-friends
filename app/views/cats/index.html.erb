@@ -1,19 +1,26 @@
-<div class="container w-75 mt-3 text-center">
-  <h1>Cats</h1>
+<div class="text-center">
   <% @cats.each do |cat| %>
-    <div class="container mb-5">
-      <h2><%= cat.name %></h2>
-      <% if cat.img_1.attached? %>
-        <%= cl_image_tag(cat.img_1.key, height: 300, width: 300)%>
-      <% end %>
-      <% if cat.img_2.attached? %>
-        <%= cl_image_tag(cat.img_2.key, height: 300, width: 300)%>
-      <% end %>
-      <% if cat.img_3.attached? %>
-        <%= cl_image_tag(cat.img_3.key, height: 300, width: 300)%>
-      <% end %>
-      <p><%= cat.details%></p>
-      <%= link_to "Show this cat", cat_path(cat), class: "btn btn-primary" %>
-    </div>
-  <% end %>
+    <% if cat.img_1.attached? %>
+      <div class="card-trip mb-3">
+        <h1 class="text-start"><%= cat.name %></h1>
+        <%= cl_image_tag cat.img_1.key %>
+        <div class="card-trip-infos">
+          <div>
+            <p>Rating: ⭐︎⭐︎⭐︎</p>
+          </div>
+          <p class="card-trip-pricing">Their owner is: <%= cat.user.first_name %> <%= cat.user.last_name %></p>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+        <div>
+          <p><%= cat.details %></p>
+        <div class="card-trip-infos">
+          <div>
+            <p>Skip</p>
+          </div>
+          <p class="card-trip-pricing">Info</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end%>
 </div>

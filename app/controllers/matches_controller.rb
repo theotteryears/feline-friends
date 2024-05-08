@@ -1,4 +1,8 @@
 class MatchesController < ApplicationController
+  def index
+    @matches = policy_scope(Match).where(user: current_user)
+    @matches = @matches.where(accepted: true)
+  end
 
   def create
     # if I am the owner
