@@ -2,5 +2,6 @@
 <%= simple_form_for(@cat) do |f| %>
   <%= f.input :name %>
   <%= f.input :details %>
+  <%= f.input :img_1, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
