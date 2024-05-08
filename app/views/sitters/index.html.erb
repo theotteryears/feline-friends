@@ -14,12 +14,13 @@
       <div class="card-trip">
         <div class="card-trip-infos">
           <div>
+            <%= cl_image_tag sitter.img.key %>
             <h1><%= sitter.first_name.capitalize %> <%= sitter.last_name.capitalize %></h1>
           </div>
           <p>
             <br><%= sitter.details %>
             <br><%= sitter.email %>
-            <br>Rating ???
+            <br>Rating ⭐︎⭐︎⭐︎⭐︎⭐︎
           </p>
         </div>
       </div>
