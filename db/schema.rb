@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_09_132511) do
 
   create_table "cats", force: :cascade do |t|
     t.string "name"
-    t.text "details"
+    t.text "personality"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_09_132511) do
     t.string "breed"
     t.string "img_2"
     t.string "img_3"
+    t.integer "age", null: false
     t.index ["user_id"], name: "index_cats_on_user_id"
   end
 
