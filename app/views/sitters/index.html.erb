@@ -1,17 +1,14 @@
-<div class="container text-center">
-  <div class="text-center">
-  <div  data-controller="modal">
-    <button data-action="click->modal#open" class="btn btn-outline-primary">Add Cat</button>
+<div class="container text-center mt-5">
+  <div data-controller="modal">
+    <button data-action="click->modal#open" class="btn btn-normal mb-3">Add your cat</button>
     <dialog data-modal-target="modal">
       <%= render "shared/form", cat: @cat %>
-      <button data-action="click->modal#close" class="btn btn-outline-primary">close</button>
+      <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
     </dialog>
   </div>
-
-
   <div class="cards">
     <% @sitters.each do |sitter| %>
-      <div class="card-trip">
+      <div class="card-trip mb-3">
         <div class="card-trip-infos">
           <div>
             <% if sitter.img.attached? %>
