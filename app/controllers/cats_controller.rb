@@ -1,7 +1,7 @@
 class CatsController < ApplicationController
   def index
-    @cats = Cat.all
     @cats = policy_scope(Cat)
+    # @cats = Cat.all.select { |cat| cat.}
   end
 
   def show
