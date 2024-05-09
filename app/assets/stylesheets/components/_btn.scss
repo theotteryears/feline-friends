@@ -8,7 +8,10 @@
   color: #FFF;
   font-size: 1rem;
   font-weight: 300;
-
+  &:hover {
+    background: darken($blue, 10%);
+    color: $white;
+  }
 }
 
 .btn-login {
@@ -21,4 +24,24 @@
   color: #FFF;
   font-size: 1rem;
   font-weight: 300;
+  &:hover {
+    background: darken($yellow, 10%);
+    color: $white;
+  }
+}
+
+.btn-password {
+  text-align: center;
+  width: auto;
+  height: 3rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 1.25rem;
+  background: $red;
+  color: #FFF;
+  font-size: 1rem;
+  font-weight: 300;
+  &:hover {
+    background: darken($red, 10%);
+    color: $white;
+  }
 }

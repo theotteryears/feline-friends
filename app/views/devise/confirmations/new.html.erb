@@ -1,5 +1,5 @@
-<div class="container w-75 mt-3">
-  <h2>Resend confirmation instructions</h2>
+<div class="container w-75 mt-5">
+  <h2 class="text-center">Resend confirmation instructions</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
     <%= f.error_notification %>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Resend confirmation instructions" %>
+      <%= f.button :submit, "Resend confirmation instructions", class: "btn btn-password" %>
     </div>
   <% end %>
 
