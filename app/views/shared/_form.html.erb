@@ -1,7 +1,9 @@
 <h2>Add my cat</h2>
 <%= simple_form_for(@cat) do |f| %>
   <%= f.input :name %>
-  <%= f.input :details %>
+  <%= f.input :breed %>
+  <%= f.input :age %>
+  <%= f.input :personality %>
   <%= f.input :img_1, as: :file %>
   <%= f.input :img_2, as: :file %>
   <%= f.input :img_3, as: :file %>
