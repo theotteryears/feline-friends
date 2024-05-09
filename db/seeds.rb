@@ -2,17 +2,17 @@ require "open-uri"
 
 puts "Cleaning database..."
 
-User.delete_all
-Cat.delete_all
-Match.delete_all
+User.destroy_all
+Cat.destroy_all
+
 
 puts 'Creating users'
 
-u1 = User.new(role: 0, email: "sitter@test.com", password: "123456", first_name: "David", last_name: "Cattington", details: "Hi, I am a cat sitter and I love cats. I'm super good at looking after cats. I have a lot of experience and I am very reliable. I am available to look after your cat for a week while you are on holiday. I can also do daily visits if you need.")
+u1 = User.new(role: 0, email: "sitter@test.com", password: "123456", first_name: "Catherine", last_name: "Cattington", details: "Hi, I am a cat sitter and I love cats. I'm super good at looking after cats. I have a lot of experience and I am very reliable. I am available to look after your cat for a week while you are on holiday. I can also do daily visits if you need.")
 file = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715178844/tran-mau-tri-tam-Fst4SmneRU4-unsplash_m04sde.jpg")
 u1.img.attach(io: file, filename: "tran-mau-tri-tam-Fst4SmneRU4-unsplash_m04sde.jpg", content_type: "image/jpg")
 u1.save
-u2 = User.create!(role: 1, email: "owner@test.com", password: "123456", first_name: "Catherine", last_name: "Morris", details: "Hi, I am a cat owner and I really need to find a cat sitter. I have two cats, George and Leia. They are both very sweet and friendly. I need someone to look after them for a week while I am on holiday.")
+u2 = User.create!(role: 1, email: "owner@test.com", password: "123456", first_name: "Holly", last_name: "Morris", details: "Hi, I am a cat owner and I really need to find a cat sitter. I have two cats, George and Leia. They are both very sweet and friendly. I need someone to look after them for a week while I am on holiday.")
 file = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715178845/laura-chouette-RhvEChrPHQE-unsplash_mtfnkv.jpg")
 u2.img.attach(io: file, filename: "laura-chouette-RhvEChrPHQE-unsplash_mtfnkv.jpg", content_type: "image/jpg")
 u2.save
@@ -45,9 +45,5 @@ cat.img_2.attach(io: file2, filename: "IMG-20240419-WA0012_y0sgfj.jpg", content_
 file3 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171946/IMG-20240419-WA0016_ztpepn.jpg")
 cat.img_3.attach(io: file3, filename: "IMG-20240419-WA0016_ztpepn.jpg", content_type: "image/jpg")
 cat.save
-# puts 'Creating matches'
-
-# Match.create!(user_id: 1, cat_id: 1)
-# Match.create!(user_id: 1, cat_id: 2)
 
 puts 'Finished seeding'
