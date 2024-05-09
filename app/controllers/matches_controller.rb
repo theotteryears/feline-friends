@@ -8,7 +8,7 @@ class MatchesController < ApplicationController
     authorize @match
     if @match.save
       @chatroom = Chatroom.create(
-        name: "Chat between #{current_user.first_name} and #{@cat.name}",
+        name: "Chat between #{current_user.first_name} and #{@cat.user.first_name} - #{@cat.name}'s owner",
         match_id: @match.id
       )
       redirect_to chatroom_path(@chatroom)
