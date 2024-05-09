@@ -1,5 +1,5 @@
-<div class="container mt-3">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container w-75 mt-5">
+  <h2 class="text-center">Edit Profile</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
@@ -32,14 +32,11 @@
                   as: :file %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Update", class: "btn btn-primary" %>
+    <div class="form-actions text-center">
+      <%= f.button :submit, "Update", class: "btn btn-signup mt-4" %>
     </div>
   <% end %>
 
-  <h3>Cancel my account</h3>
 
-  <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-  <%= link_to "Back", :back %>
+  <div class="text-center"><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn-password mt-3" %></div>
 </div>

@@ -10,19 +10,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <div class="container mt-3">
-      <div class="content-container">
-        <%= yield %>
-      </div>
-
-      <div class="flashes-container">
-        <%= render "shared/flashes" %>
-      </div>
-    </div>
-
-    <div class="footer-container">
-      <%= render "shared/footer" %>
-    </div>
+  <body class="site">
+    <main class="site-content">
+      <%= yield %>
+    </main>
+    <%= render "shared/flashes" %>
+    <%= render "shared/footer" %>
   </body>
 </html>

@@ -1,11 +1,13 @@
-<h2>Add my cat</h2>
-<%= simple_form_for(@cat) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :breed %>
-  <%= f.input :age %>
-  <%= f.input :personality %>
-  <%= f.input :img_1, as: :file %>
-  <%= f.input :img_2, as: :file %>
-  <%= f.input :img_3, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container w-75 mt-5">
+  <h2 class="text-center">Add your cat</h2>
+  <%= simple_form_for(@cat) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :breed %>
+    <%= f.input :age %>
+    <%= f.input :personality, label: "Describe your cat" %>
+    <%= f.input :img_1, as: :file, label: "Add your cat's photo" %>
+    <%= f.input :img_2, as: :file, label: "Add another photo (optional)"%>
+    <%= f.input :img_3, as: :file, label: "Add yet another photo (optional)"%>
+    <%= f.submit "Add", class: "btn btn-signup mt-3" %>
+  <% end %>
+</div>
