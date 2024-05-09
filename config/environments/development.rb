@@ -66,7 +66,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   # NGROK
-  config.hosts << /.*\.ngrok\.io$/
+  config.hosts << /.*\.ngrok.*/
 
 
   # Raises error for missing translations.
