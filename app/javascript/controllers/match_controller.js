@@ -4,14 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["heart", "next"]
 
-
-  heart(event) {
-    const catId = event.target.dataset.id;
-    const nextCatId = parseInt(catId) + 1;
-    document.getElementById(`${nextCatId}`).classList.toggle("d-none");
-    document.getElementById(`${catId}`).classList.toggle("d-none");
-  }
-
   next(event) {
     console.log(event);
     // if d-none

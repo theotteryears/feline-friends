@@ -1,11 +1,1 @@
-<h2>Pending Matches</h2>
-  <% @pending_matches.each do |match| %>
-    <%= form_for match do |f| %>
-      <%= f.hidden_field :status, value: "accepted" %>
-      <%= f.submit "Accept" %>
-    <% end %>
-    <%= form_for match, url: match_path(match), method: :delete do |f| %>
-      <%= f.hidden_field :status, value: "declined" %>
-      <%= f.submit "Reject" %>
-    <% end %>
-  <% end %>
+

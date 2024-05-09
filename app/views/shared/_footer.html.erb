@@ -2,7 +2,7 @@
   <div class="footer-links">
     <%= link_to "Home", root_path %>
     <%= link_to "Top Rated" %>
-    <%= link_to "Matches" %>
+    <%= link_to "Matches", user_matches_path(current_user) if current_user %>
     <%= link_to "Chat" %>
     <%= link_to "Profile", profile_path %>
   </div>

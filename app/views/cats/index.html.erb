@@ -2,12 +2,12 @@
   <h1>Cats</h1>
   <div data-controller="match">
     <% @cats.each_with_index do |cat, index| %>
-      <div data-match-target="next heart" id="<%=index%>" class="container mb-5 <%= index.zero? ? '' : 'd-none' %>">
+      <div data-match-target="next" id="<%=index%>" class="container mb-5 <%= index.zero? ? '' : 'd-none' %>">
         <h2><%= cat.name %></h2>
         <% if cat.img_1.attached? %>
           <%= cl_image_tag(cat.img_1.key, height: 300, width: 300)%>
         <% end %>
-        <i data-action="click->match#heart" data-id="<%=index%>" class="fa-regular fa-heart"></i>
+        <%= button_to "Matches", cat_matches_path(cat), data: {turbo_method: :post} %>
         <i  data-action="click->match#next"  data-id="<%=index%>" class="fa-solid fa-xmark"></i>
         <p><%= cat.personality%></p>
         <% if cat.img_2.attached? %>
