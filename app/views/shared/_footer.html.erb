@@ -1,11 +1,21 @@
 <% if current_user %>
   <div class="footer">
     <div class="footer-links">
-        <%= link_to "Home", root_path %>
-        <%= link_to "Top Rated", root_path %>
-        <%= link_to "Matches", root_path %>
-        <%= link_to "Chat", root_path %>
-        <%= link_to "Profile", profile_path %>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
+        <%= link_to root_path do %>
+          <i class="fa-regular fa-star"></i>
+        <% end %>
+        <%= link_to root_path do %>
+          <i class="fa-regular fa-heart"></i>
+        <% end %>
+        <%= link_to root_path do %>
+          <i class="fa-regular fa-comment"></i>
+        <% end %>
+        <%= link_to profile_path do %>
+          <i class="fa-solid fa-user"></i>
+        <% end %>
     </div>
   </div>
 <% end %>
