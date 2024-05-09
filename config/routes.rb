@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
   get "/cats/:cat_id/matches/", to: "matches#create"
   resources :users, only: [] do
-    resources :matches, only: [:create]
+    resources :matches, only: [ :index, :create ]
   end
   resources :chatrooms, only: :show do
     resources :messages, only: :create
