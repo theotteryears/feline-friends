@@ -2,34 +2,18 @@ class MatchesController < ApplicationController
   before_action :set_user_and_cat, only: [:create]
 
   def create
-    @match = Match.new(match_params)
+    @match = Match.new
+    @match.cat = @cat
+    @match.user = current_user || @user
     authorize @match
     if @match.save
-    # here we want to notify the cat owner that they have received a match request
-      redirect_to cats_path, notice: 'Match request sent!'
+      @chatroom = Chatroom.create(
+        name: "Chat between #{current_user.first_name} and #{@cat.name}",
+        match_id: @match.id
+      )
+      redirect_to chatroom_path(@chatroom)
     else
-      render :new, alert: "Failed to send match request."
-    end
-  end
-
-  def index
-    @matches = policy_scope(Match)
-    @pending_matches = Match.where(cat_id: current_user.cats.select(:id), status: :pending)
-  end
-
-  def update
-    authorize @match
-    @match = Match.find(params[:id])
-    if @match.update(match_params)
-      if @match.accepted?
-        authorize @chatroom
-        Chatroom.create(name: "Chat between #{User.first.first_name} and #{Cat.first.name}", match_id: @match.id)
-        redirect_to chatrooms_path, notice: 'Match accepted and chatroom created!'
-      else
-        redirect_to matches_path, notice: 'Match rejected.'
-      end
-    else
-      render :edit, alert: 'Failed to update match.'
+      render :new, alert: "Match not created"
     end
   end
 
@@ -46,7 +30,6 @@ class MatchesController < ApplicationController
     #  @cat = Cat.find(params[:cat_id])
     #  create_a_match(@user, @cat)
     # end
-
 
   private
 
@@ -67,6 +50,7 @@ class MatchesController < ApplicationController
   # end
 
   def match_params
+    raise
     params.require(:match).permit(:user_id, :cat_id, :accepted)
   end
 
