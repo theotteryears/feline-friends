@@ -14,7 +14,9 @@
       <div class="card-trip">
         <div class="card-trip-infos">
           <div>
-            <%= cl_image_tag sitter.img.key %>
+            <% if sitter.img.attached? %>
+              <%= cl_image_tag sitter.img.key %>
+            <%end%>
             <h1><%= sitter.first_name.capitalize %> <%= sitter.last_name.capitalize %></h1>
           </div>
           <p>
