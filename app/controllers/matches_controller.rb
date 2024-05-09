@@ -1,20 +1,33 @@
 class MatchesController < ApplicationController
+  before_action :set_user_and_cat, only: [:create]
 
   def create
-    # if I am the owner
-    if params[:user_id].present?
-      @user = User.find(params[:user_id])
-      @cats = current_user.cats
-      @cats.each do |cat|
-        create_a_match(@user, cat)
-      end
-    # if I am the sitter
-    elsif params[:cat_id].present?
-      @user = current_user
-      @cat = Cat.find(params[:cat_id])
-      create_a_match(@user, @cat)
+    @match = Match.new(match_params)
+    authorize @match
+    if @match.save
+      authorize @chatroom
+      @chatroom = Chatroom.create(
+        name: "Chat between #{User.first_name} and #{Cat.name}",
+        match_id: match.id)
+      redirect_to chatroom_path(@chatroom)
+    else
+      render :new, alert: "Match not created"
     end
   end
+    # if I am the owner
+    # if params[:user_id].present?
+    #  @user = User.find(params[:user_id])
+    #  @cats = current_user.cats
+    #  @cats.each do |cat|
+    #    create_a_match(@user, cat)
+    #  end
+    # if I am the sitter
+    # elsif params[:cat_id].present?
+    #  @user = current_user
+    #  @cat = Cat.find(params[:cat_id])
+    #  create_a_match(@user, @cat)
+    # end
+
 
   private
 
@@ -23,7 +36,9 @@ class MatchesController < ApplicationController
     if @match.present?
       authorize @match
       @match.update(accepted: true)
-      # redirect_to chatroom_path
+      name = "test"
+      @chatroom = Chatroom.create(match_id: @match, name: name)
+      redirect_to chatroom_path
     else
       @match = Match.new(user: user, cat: cat)
       authorize @match
@@ -34,5 +49,10 @@ class MatchesController < ApplicationController
 
   def match_params
     params.require(:match).permit(:user_id, :cat_id, :accepted)
+  end
+
+  def set_user_and_cat
+    @user = User.find(params[:user_id]) if params[:user_id].present?
+    @cat = Cat.find(params[:cat_id]) if params[:cat_id].present?
   end
 end
