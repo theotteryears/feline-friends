@@ -5,18 +5,24 @@ Rails.application.routes.draw do
 
   get "/profile", to: "pages#profile"
   get "/sitters", to: "sitters#index"
+  patch "/matches/:id/accept", to: "matches#accept", as: :accept_match
+  patch "/matches/:id/decline", to: "matches#decline", as: :decline_match
+
 
   resources :cats do
     resources :matches, only: [ :create]
     resources :cat_tags, only: [ :new, :create ]
   end
   get "/cats/:cat_id/matches/", to: "matches#create"
+
   resources :users, only: [] do
-    resources :matches, only: [ :create ]
+    resources :matches, only: [ :index, :create ]
   end
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
+
+
 
 
 
