@@ -36,8 +36,8 @@ cat.img_2.attach(io: file2, filename: "IMG_6453_rjvwwu.jpg", content_type: "imag
 cat.save
 
 cat = Cat.new(user: u2, name: "Rubine", personality: "Rubine is full of energy and loves to play, whether it's chasing toys or pouncing on unsuspecting objects.", age: 3, breed: "Ragdoll")
-file1 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715327180/IMG_6111_gatxga.jpg")
-cat.img_1.attach(io: file1, filename: "IMG_6111_gatxga.jpg", content_type: "image/jpg")
+file1 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/a_-90/a_vflip/v1715344606/development/0b1mdh4c10b4xmghkzxnlo1wusmo.jpg")
+cat.img_1.attach(io: file1, filename: "0b1mdh4c10b4xmghkzxnlo1wusmo.jpg", content_type: "image/jpg")
 cat.save
 
 cat = Cat.new(user: u2, name: "Leia", personality: "Leia is a shy cat, prefering to watch from a distance, quietly observing the world around them.", age: 5, breed: "British Shorthair")

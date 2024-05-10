@@ -9,60 +9,60 @@
   <% end %>
   <div data-controller="match">
     <% if @cats.any? %>
-
-  <div class="row" data-controller="match">
-    <% @cats.each_with_index do |cat, index| %>
-      <div data-match-target="next" id="<%=index%>" class="container mb-5 <%= index.zero? ? '' : 'd-none' %>">
-        <div class="cat-card">
-          <div class="cat-card-title">
-            <h2><%= cat.name %></h2>
-          </div>
-          <div class="cat-card-image">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <% if cat.img_1.attached? %>
-                    <%= cl_image_tag(cat.img_1.key, height: 400, width: 400, crop: "fill")%>
-                  <% end %>
+      <div class="row" data-controller="match">
+        <% @cats.each_with_index do |cat, index| %>
+          <div data-match-target="next" id="<%=index%>" class="container mb-5 <%= index.zero? ? '' : 'd-none' %>">
+            <div class="cat-card">
+              <div class="cat-card-title">
+                <h2><%= cat.name %></h2>
+              </div>
+              <div class="cat-card-image">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <% if cat.img_1.attached? %>
+                        <%= cl_image_tag(cat.img_1.key, height: 400, width: 400, crop: "fill")%>
+                      <% end %>
+                    </div>
+                    <div class="carousel-item">
+                      <% if cat.img_2.attached? %>
+                        <%= cl_image_tag(cat.img_2.key, height: 400, width: 400, crop: "fill")%>
+                      <% end %>
+                    </div>
+                    <div class="carousel-item">
+                      <% if cat.img_3.attached? %>
+                        <%= cl_image_tag(cat.img_3.key, height: 400, width: 400, crop: "fill")%>
+                      <% end %>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-                <div class="carousel-item">
-                  <% if cat.img_2.attached? %>
-                    <%= cl_image_tag(cat.img_2.key, height: 400, width: 400, crop: "fill")%>
+                <div class="cat-card-actions">
+                  <%= link_to cat_matches_path(cat), class: "btn-heart", data: {turbo_method: :post} do %>
+                    <i class="fa-regular fa-heart"></i>
                   <% end %>
-                </div>
-                <div class="carousel-item">
-                  <% if cat.img_3.attached? %>
-                    <%= cl_image_tag(cat.img_3.key, height: 400, width: 400, crop: "fill")%>
-                  <% end %>
+                  <button class="btn-trash"><i  data-action="click->match#next"  data-id="<%=index%>" class="fa-solid fa-xmark"></i></button>
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-            <div class="cat-card-actions">
-              <%= link_to cat_matches_path(cat), class: "btn-heart", data: {turbo_method: :post} do %>
-                <i class="fa-regular fa-heart"></i>
-              <% end %>
-              <button class="btn-trash"><i  data-action="click->match#next"  data-id="<%=index%>" class="fa-solid fa-xmark"></i></button>
+              <div class="cat-card-details">
+                <p><%= cat.personality%><br/><br/>
+                <hr>
+                Breed: <%= cat.breed %><br/>
+                Age: <%= cat.age %> </p>
+              </div>
             </div>
           </div>
-          <div class="cat-card-details">
-            <p><%= cat.personality%><br/><br/>
-            <hr>
-            Breed: <%= cat.breed %><br/>
-            Age: <%= cat.age %> </p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    <% else %>
-      <p>Sorry, no cats found.</p>
-    <%end%>
+        <% end %>
+      <% else %>
+        <p>Sorry, no cats found.</p>
+      <%end%>
+    </div>
   </div>
 </div>
