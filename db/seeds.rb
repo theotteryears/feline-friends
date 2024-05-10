@@ -19,7 +19,7 @@ u2.save
 
 puts 'Creating cats'
 
-cat = Cat.new(user: u2, name: "George", personality: "Cute", age: 10, breed: "Domestic Shorthair")
+cat = Cat.new(user: u2, name: "George", personality: "George loves to roam and discover new territories, always on the lookout for hidden treasures.", age: 10, breed: "Domestic Shorthair")
 file1 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715159584/george.jpg")
 cat.img_1.attach(io: file1, filename: "george.jpg", content_type: "image/jpg")
 file2 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715159405/20190513_165900_IMG_0552_vtkfsc.jpg")
@@ -28,19 +28,19 @@ file3 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171938/
 cat.img_3.attach(io: file3, filename: "20240227_183859_ehviep.jpg", content_type: "image/jpg")
 cat.save
 
-cat = Cat.new(user: u2, name: "Siva", personality: "Very friendly", age: 1, breed: "British Shorthair")
+cat = Cat.new(user: u2, name: "Siva", personality: "Shiva is a sweet and affectionate cat, always ready to curl up in your lap for some quality snuggle time.", age: 1, breed: "British Shorthair")
 file1 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715327181/img_6552__1_rmnqsl.jpg")
 cat.img_1.attach(io: file1, filename: "img_6552__1_rmnqsl.jpg", content_type: "image/jpg")
 file2 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715327177/IMG_6453_rjvwwu.jpg")
 cat.img_2.attach(io: file2, filename: "IMG_6453_rjvwwu.jpg", content_type: "image/jpg")
 cat.save
 
-cat = Cat.new(user: u2, name: "Rubine", personality: "Very friendly", age: 3, breed: "Ragdoll")
+cat = Cat.new(user: u2, name: "Rubine", personality: "Rubine is full of energy and loves to play, whether it's chasing toys or pouncing on unsuspecting objects.", age: 3, breed: "Ragdoll")
 file1 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715327180/IMG_6111_gatxga.jpg")
 cat.img_1.attach(io: file1, filename: "IMG_6111_gatxga.jpg", content_type: "image/jpg")
 cat.save
 
-cat = Cat.new(user: u2, name: "Leia", personality: "Shy but sweet", age: 5, breed: "British Shorthair")
+cat = Cat.new(user: u2, name: "Leia", personality: "Leia is a shy cat, prefering to watch from a distance, quietly observing the world around them.", age: 5, breed: "British Shorthair")
 file1 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715162028/leia.jpg")
 cat.img_1.attach(io: file1, filename: "leia.jpg", content_type: "image/jpg")
 file2 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171589/IMG-20210619-WA0000_mc1lql.jpg")
@@ -49,7 +49,7 @@ file3 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171945/
 cat.img_3.attach(io: file3, filename: "IMG-20240115-WA0003_uds5er.jpg", content_type: "image/jpg")
 cat.save
 
-cat = Cat.new(user: u2, name: "Flower", personality: "A beautiful fluffy cat", age: 13, breed: "Domestic Longhair")
+cat = Cat.new(user: u2, name: "Flower", personality: "Flower is a bold and spirited, with a fiery personality, unafraid to speak their mind and assert their independence.", age: 13, breed: "Domestic Longhair")
 file1 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171946/IMG-20240419-WA0010_orqowo.jpg")
 cat.img_1.attach(io: file1, filename: "IMG-20240419-WA0010_orqowo.jpg", content_type: "image/jpg")
 file2 = URI.open("https://res.cloudinary.com/djdqlglck/image/upload/v1715171946/IMG-20240419-WA0012_y0sgfj.jpg")
