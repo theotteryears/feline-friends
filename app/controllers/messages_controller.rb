@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     @message.user = current_user
     if @message.save
+      @message.update(created_at: Time.current)
       ChatroomChannel.broadcast_to(
         @chatroom,
         message: render_to_string(partial: "message", locals: { message: @message }),
