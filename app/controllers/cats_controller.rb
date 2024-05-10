@@ -1,7 +1,12 @@
+require_relative '../models/cat' # Add this line to import the Cat model
+
 class CatsController < ApplicationController
   def index
     @cats = policy_scope(Cat)
-    # @cats = Cat.all.select { |cat| cat.}
+    if params[:query].present?
+      @cats = @cats.joins(:user).where(users: { city: params[:query].capitalize })
+      # @cats = @cats.joins(user:).where("users.city ILIKE :query", query: "%#{params[:query]}%")
+    end
   end
 
   def show
