@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_13_074200) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_13_103931) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -93,12 +93,58 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_13_074200) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+<<<<<<< HEAD
+  create_table "noticed_events", force: :cascade do |t|
+    t.string "type"
+    t.string "record_type"
+    t.bigint "record_id"
+    t.jsonb "params"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "notifications_count"
+    t.index ["record_type", "record_id"], name: "index_noticed_events_on_record"
+  end
+
+  create_table "noticed_notifications", force: :cascade do |t|
+    t.string "type"
+    t.bigint "event_id", null: false
+    t.string "recipient_type", null: false
+    t.bigint "recipient_id", null: false
+    t.datetime "read_at", precision: nil
+    t.datetime "seen_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_noticed_notifications_on_event_id"
+    t.index ["recipient_type", "recipient_id"], name: "index_noticed_notifications_on_recipient"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.string "on_click_url"
+    t.time "sent_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "match_id", null: false
+    t.index ["match_id"], name: "index_notifications_on_match_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.bigint "matches_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["matches_id"], name: "index_ratings_on_matches_id"
+=======
   create_table "ratings", force: :cascade do |t|
     t.integer "rating"
     t.bigint "cat_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cat_id"], name: "index_ratings_on_cat_id"
+>>>>>>> master
   end
 
   create_table "tags", force: :cascade do |t|
@@ -135,5 +181,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_13_074200) do
   add_foreign_key "matches", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+<<<<<<< HEAD
+  add_foreign_key "notifications", "matches"
+  add_foreign_key "notifications", "users"
+  add_foreign_key "ratings", "matches", column: "matches_id"
+=======
   add_foreign_key "ratings", "cats"
+>>>>>>> master
 end

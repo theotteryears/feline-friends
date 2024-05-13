@@ -19,7 +19,8 @@ class MatchesController < ApplicationController
         name: "Chat",
         match_id: @match.id
       )
-      redirect_to chatroom_path(@chatroom)
+      flash.notice = "Match request sent!"
+      redirect_to cats_path
     end
   end
 
@@ -29,6 +30,9 @@ class MatchesController < ApplicationController
     @match.status = "accepted"
     @match.save!
     if @match.status == "accepted"
+      flash.notice = "Match accepted!"
+      # Notify the cat sitter using WebSockets
+      NotificationChannel.broadcast_to(@match.user, "Match accepted!")
       redirect_to chatroom_path(@match.chatroom)
     end
   end
