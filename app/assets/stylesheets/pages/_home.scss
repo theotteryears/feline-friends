@@ -1,37 +1,63 @@
 // Specific CSS for your home-page
-.galada-regular {
-  font-family: "Galada", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-// .my-font {
-//   font-family: "MysticalWoodsRoughScript", cursive;
-//   font-weight: normal;
+// .galada-regular {
+//   font-family: "Galada", cursive;
+//   font-weight: 400;
 //   font-style: normal;
 // }
 
+.my-font {
+  font-family: "Mystical-Woods";
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
 .container {
   // position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   align-content: space-between;
+  height: 100vh;
 }
 
 .title {
   // display: flex;
+  font-family: "Mystical-Woods";
   display: inline-block;
   justify-content: center;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 0;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-family: "Zen Kaku Gothic New";
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
+
+.logo {
+  justify-content: center;
+}
+
+.baseline {
+  justify-content: center;
+  text-align: center;
 }
 
 .buttons {
   // position: absolute;
   display: flex;
-  justify-content: center;
-  bottom: 5%;
+  justify-content: space-around;
+  width: 65%;
 }
