@@ -1,11 +1,7 @@
 <div class="container">
-  <h1 class="text-center mb-4">Rate this cat</h1>
-  <div class="row">
-    <div class="col-6">
-      <%= simple_form_for [@match, @rating] do |f| %>
-        <%= f.input :rating %>
-        <%= f.submit "Add", class: "btn btn-flat" %>
-      <% end %>
-    </div>
-  </div>
+<h1>New Rating</h1>
+<%= simple_form_for [@cat, @rating] do |f| %>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Rate this cat", input_html: {data: {controller: "star-rating"}} %>
+  <%= f.submit "Submit rating", class: "btn btn-primary" %>
+<% end %>
 </div>

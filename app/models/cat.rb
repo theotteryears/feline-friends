@@ -1,6 +1,7 @@
 class Cat < ApplicationRecord
   belongs_to :user
   has_many :matches, dependent: :destroy
+  has_many :ratings, dependent: :destroy
   validates :name, presence: true
   validates :personality, presence: true
   validates :age, presence: true

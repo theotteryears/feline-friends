@@ -1,8 +1,4 @@
 class Rating < ApplicationRecord
-  belongs_to :matches
+  belongs_to :cat
   validates :rating, presence: true, inclusion: { in: 1..5 }
-
-  def cat
-    match.cat
-  end
 end
