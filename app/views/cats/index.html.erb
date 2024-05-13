@@ -55,7 +55,28 @@
                 <p><%= cat.personality%><br/><br/>
                 <hr>
                 Breed: <%= cat.breed %><br/>
-                Age: <%= cat.age %> </p>
+                Age: <%= cat.age %>
+                <p>
+                <%if cat.ratings.average(:rating) != nil %>
+                  <% average_rating_floor = cat.ratings.average(:rating).to_i %>
+                  <% average_rating_decimal = cat.ratings.average(:rating) - average_rating_floor %>
+                  <% 5.times do |index| %>
+                    <% if index < average_rating_floor %>
+                      <i class="fas fa-star" style="color: #FFD43B;"></i>
+                    <% elsif index == average_rating_floor && average_rating_decimal > 0 %>
+                      <i class="fas fa-star-half" style="color: #FFD43B;"></i>
+                    <% else %>
+                      <i class="far fa-star" style="color: white;"></i>
+                    <% end %>
+                  <% end %>
+                <% end %>
+                  <% unless cat.ratings.average(:rating).nil? %>
+                    <% rating = cat.ratings.average(:rating) %>
+                    <p>Rated: <span><%= rating.round(1) %></span> from <span><%= cat.ratings.count %></span> reviews</p>
+                  <% else %>
+                    <p>Not yet rated</p>
+                  <% end %>
+                  </p>
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
   <h2>#Chat between you and <%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %></h2>
+  <p><%= link_to "Rate the cat", new_cat_rating_path(@chatroom.match.cat.id) %> </p>
 
   <div class="messages mt-5" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>

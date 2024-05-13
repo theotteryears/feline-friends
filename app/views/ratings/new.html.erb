@@ -1,0 +1,7 @@
+<div class="container">
+<h1>New Rating</h1>
+<%= simple_form_for [@cat, @rating] do |f| %>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Rate this cat", input_html: {data: {controller: "star-rating"}} %>
+  <%= f.submit "Submit rating", class: "btn btn-primary" %>
+<% end %>
+</div>
