@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'ratings/new'
   devise_for :users
 
   root to: "pages#home"
@@ -10,18 +11,20 @@ Rails.application.routes.draw do
 
 
   resources :cats do
-    resources :matches, only: [ :create]
-    resources :cat_tags, only: [ :new, :create ]
+    resources :matches, only: [:create]
+    resources :cat_tags, only: [:new, :create]
+    resources :ratings, only: [:new, :create]
   end
   get "/cats/:cat_id/matches/", to: "matches#create"
 
   resources :users, only: [] do
-    resources :matches, only: [ :index, :create ]
+    resources :matches, only: [:index, :create]
+    resources :ratings, only: [:new, :create]
   end
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
-
+  resources :notifications, only: :show
 
 
 
