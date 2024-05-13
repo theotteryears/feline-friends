@@ -2,18 +2,23 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
 
 
 // Define fonts for body and headers
 $body-font: "Zen Kaku Gothic New", "Helvetica", "sans-serif";
-$headers-font: "Dosis", "Helvetica", "sans-serif";
+// $headers-font: "Dosis", "Helvetica", "sans-serif";
+$headers-font: "Galada", "cursive";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
+//   font-family: "Mystical Woods Smooth Script";
+//   src: font-url('mystical-woods/MysticalWoodsRoughScript.eot');
+//   src: font-url('mystical-woods/MysticalWoodsRoughScript.eot?#iefix') format('embedded-opentype'),
+//        font-url('mystical-woods/MysticalWoodsRoughScript.woff') format('woff'),
+//        font-url('mystical-woods/MysticalWoodsRoughScript.ttf') format('truetype');
+//   font-weight: normal;
+//   font-style: normal;
 // }
-// $my-font: "Font Name";
+// $my-font: "Mystical Woods Smooth Script";
+// $headers-font: $my-font;
