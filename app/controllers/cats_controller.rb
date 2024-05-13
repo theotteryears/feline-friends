@@ -7,11 +7,13 @@ class CatsController < ApplicationController
       @cats = @cats.joins(:user).where(users: { city: params[:query].capitalize })
       # @cats = @cats.joins(user:).where("users.city ILIKE :query", query: "%#{params[:query]}%")
     end
+    # @average_rating = @cat.ratings.average(:rating)
   end
 
   def show
     @cat = Cat.find(params[:id])
     authorize @cat
+    @average_rating = @cat.ratings.average(:rating)
   end
 
   def new
