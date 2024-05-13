@@ -93,7 +93,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_13_103931) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-<<<<<<< HEAD
   create_table "noticed_events", force: :cascade do |t|
     t.string "type"
     t.string "record_type"
@@ -133,18 +132,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_13_103931) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "rating"
-    t.bigint "matches_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["matches_id"], name: "index_ratings_on_matches_id"
-=======
-  create_table "ratings", force: :cascade do |t|
-    t.integer "rating"
     t.bigint "cat_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cat_id"], name: "index_ratings_on_cat_id"
->>>>>>> master
   end
 
   create_table "tags", force: :cascade do |t|
@@ -181,11 +172,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_13_103931) do
   add_foreign_key "matches", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-<<<<<<< HEAD
   add_foreign_key "notifications", "matches"
   add_foreign_key "notifications", "users"
-  add_foreign_key "ratings", "matches", column: "matches_id"
-=======
   add_foreign_key "ratings", "cats"
->>>>>>> master
 end
