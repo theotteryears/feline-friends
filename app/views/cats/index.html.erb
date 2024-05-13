@@ -3,9 +3,10 @@
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Browse cats by city"
+      placeholder: "Browse cats by city",
+      autocomplete: "off"
     %>
-    <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <%= button_tag type: 'submit', class: 'btn btn-primary' do %><i class="fa-solid fa-magnifying-glass"></i><% end %>
   <% end %>
   <div data-controller="match">
     <% if @cats.any? %>
