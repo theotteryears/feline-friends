@@ -7,18 +7,18 @@
 
 // Define fonts for body and headers
 $body-font: "Zen Kaku Gothic New", "Helvetica", "sans-serif";
-// $headers-font: "Dosis", "Helvetica", "sans-serif";
-$headers-font: "Galada", "cursive";
+$headers-font: "Dosis", "Helvetica", "sans-serif";
+// $headers-font: "Galada", "cursive";
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Mystical Woods Smooth Script";
-//   src: font-url('mystical-woods/MysticalWoodsRoughScript.eot');
-//   src: font-url('mystical-woods/MysticalWoodsRoughScript.eot?#iefix') format('embedded-opentype'),
-//        font-url('mystical-woods/MysticalWoodsRoughScript.woff') format('woff'),
-//        font-url('mystical-woods/MysticalWoodsRoughScript.ttf') format('truetype');
-//   font-weight: normal;
-//   font-style: normal;
-// }
-// $my-font: "Mystical Woods Smooth Script";
+@font-face {
+  font-family: "Mystical-Woods";
+  src: url('MysticalWoodsRoughScript.ttf');
+  // src: font-url('/assets/fonts/mystical-woods/MysticalWoodsRoughScript.eot?#iefix') format('embedded-opentype'),
+  //      font-url('/assets/fonts/mystical-woods/MysticalWoodsRoughScript.woff') format('woff'),
+  //      font-url('/assets/fonts/mystical-woods/MysticalWoodsRoughScript.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+$my-font: "Mystical-Woods";
 // $headers-font: $my-font;
