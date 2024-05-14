@@ -1,6 +1,20 @@
 .alert {
   position: fixed;
-  bottom: 16px;
+  top: 16px;
   right: 16px;
   z-index: 1000;
+  background-color: $yellow;
+  border: 1px solid $black;
+}
+
+.alert-fade {
+  /*...*/
+  opacity: 0;
+  animation: fadeOut 4s ease;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
 }
