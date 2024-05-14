@@ -29,7 +29,7 @@ user3.save
 puts 'Creating cats'
 
 cat = Cat.new(user: user2, name: Faker::Creature::Cat.name, personality: "A fluffy charmer with a penchant for pilfering socks and turning retrieval missions into impromptu comedy shows. With a swagger in his step and mischief in his eyes, he's the purr-fect blend of quirky and cunning.", age: 10, breed: Faker::Creature::Cat.breed, address: "Zurich")
-file1 = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/1.jpg")
+file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/1.jpg")
 cat.img_1.attach(io: file, filename: "1.jpg", content_type: "image/jpg")
 cat.save
 
