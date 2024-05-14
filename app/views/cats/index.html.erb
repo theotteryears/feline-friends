@@ -1,5 +1,5 @@
 <div class="cat-index-container">
-  <div class="form">
+  <div class="cat-city-searchform">
     <%= form_with url: cats_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
@@ -13,7 +13,7 @@
   <div class="cat-card" data-controller="match">
     <% if @cats.any? %>
       <% @cats.each_with_index do |cat, index| %>
-        <div data-match-target="next" id="<%=index%>" class="container mb-5 <%= index.zero? ? '' : 'd-none' %>">
+        <div data-match-target="next" id="<%=index%>" class="container <%= index.zero? ? '' : 'd-none' %>">
           <div class="cat-card-title">
             <h2><%= cat.name %></h2>
           </div>
