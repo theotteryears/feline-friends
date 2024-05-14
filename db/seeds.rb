@@ -11,9 +11,9 @@ Chatroom.destroy_all
 
 puts 'Creating Cat Sitter'
 
-user1 = User.new(role: 0, email: "sitter@test.com", password: "123456", first_name: "Jessica", last_name: "Roche", city: "Brighton", details: "")
-file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715718615/Sitter.jpg")
-user1.img.attach(io: file, filename: "Sitter.jpg", content_type: "image/jpg")
+user1 = User.new(role: 0, email: "sitter@test.com", password: "123456", first_name: "Chris", last_name: "Collis", city: "Brighton", details: "")
+file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715725913/me.jpg")
+user1.img.attach(io: file, filename: "me.jpg", content_type: "image/jpg")
 user1.save
 
 puts 'Creating Cat Owners'
@@ -146,6 +146,11 @@ cat = Cat.new(user: user4, name: "Henry", personality: "This eccentric little ba
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/23.jpg")
 cat.img_1.attach(io: file, filename: "23.jpg", content_type: "image/jpg")
 cat.save
+
+puts "Creating Match"
+
+Match.create!(cat_owner: user3, cat_sitter: user1, status: 0)
+Match.create!(cat_owner: user4, cat_sitter: user1, status: 0)
 
 puts 'Creating 5 star cats'
 
