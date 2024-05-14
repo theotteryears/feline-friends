@@ -1,0 +1,7 @@
+<% if notice %>
+  <div class="accepted-alert alert alert-info alert-dismissible fade show m-1" role="alert">
+    <%= link_to "😻 Your match has been accepted! Click here to join the chat 😻", chatroom_path(match.chatroom) %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
+  </div>
+<% end %>
