@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :matches, only: [:index, :create]
     resources :ratings, only: [:new, :create]
   end
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:index, :show ] do
     resources :messages, only: :create
   end
   resources :notifications, only: :show
