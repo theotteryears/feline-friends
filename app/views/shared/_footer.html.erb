@@ -4,11 +4,11 @@
         <%= link_to :back do %>
           <i data-navbar-target="icon" class="fa-solid fa-backward fa-lg"></i>
         <% end %>
-        <%= link_to root_path do %>
-          <i data-navbar-target="icon" class="fa-solid fa-paw fa-lg <%= 'active' if current_page?(cats_path) %>"></i>
-        <% end %>
         <%= link_to top_cats_path do %>
           <i data-navbar-target="icon" class="fa-regular fa-star fa-lg <%= 'active' if current_page?(top_cats_path) %>"></i>
+        <% end %>
+        <%= link_to root_path do %>
+          <i data-navbar-target="icon" class="fa-solid fa-paw fa-2xl <%= 'active' if current_page?(cats_path) %>"></i>
         <% end %>
         <%= link_to chatrooms_path do %>
           <i data-navbar-target="icon" class="fa-regular fa-comment fa-lg <%= 'active' if current_page?(chatrooms_path) %>"></i>
