@@ -1,13 +1,15 @@
-<div class="container mt-3 text-center">
-  <%= form_with url: cats_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Browse cats by city",
-      autocomplete: "off"
-    %>
-    <%= button_tag type: 'submit', class: 'btn btn-primary' do %><i class="fa-solid fa-magnifying-glass"></i><% end %>
-  <% end %>
+<div class="flex-container">
+  <div class="form">
+    <%= form_with url: cats_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Browse cats by city",
+        autocomplete: "off"
+      %>
+      <%= button_tag type: 'submit', class: 'btn btn-primary' do %><i class="fa-solid fa-magnifying-glass"></i><% end %>
+    <% end %>
+  </div>
   <div data-controller="match">
     <% if @cats.any? %>
       <div class="row" data-controller="match">
@@ -18,7 +20,7 @@
                 <h2><%= cat.name %></h2>
               </div>
               <div class="cat-card-image">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleControls" class="carousel slide">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <% if cat.img_1.attached? %>
@@ -35,6 +37,12 @@
                         <%= cl_image_tag(cat.img_3.key, height: 400, width: 400, crop: "fill")%>
                       <% end %>
                     </div>
+                    <div class="cat-card-actions">
+                      <%= button_to cat_matches_path(cat), class: "btn-heart", data: {turbo_method: :post} do %>
+                        <i class="fa-solid fa-paw"></i>
+                      <% end %>
+                      <button class="btn-trash"><i  data-action="click->match#next"  data-id="<%=index%>" class="fa-solid fa-xmark"></i></button>
+                    </div>
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -45,19 +53,12 @@
                     <span class="visually-hidden">Next</span>
                   </button>
                 </div>
-                <div class="cat-card-actions">
-                  <%= link_to cat_matches_path(cat), class: "btn-heart", data: {turbo_method: :post} do %>
-                    <i class="fa-regular fa-heart"></i>
-                  <% end %>
-                  <button class="btn-trash"><i  data-action="click->match#next"  data-id="<%=index%>" class="fa-solid fa-xmark"></i></button>
-                </div>
               </div>
               <div class="cat-card-details">
-                <p><%= cat.personality%><br/><br/>
+                <p><%= cat.personality%><br/>
                 <hr>
                 Breed: <%= cat.breed %><br/>
                 Age: <%= cat.age %>
-                <p>
                 <%if cat.ratings.average(:rating) != nil %>
                   <% average_rating_floor = cat.ratings.average(:rating).to_i %>
                   <% average_rating_decimal = cat.ratings.average(:rating) - average_rating_floor %>
@@ -75,9 +76,8 @@
                     <% rating = cat.ratings.average(:rating) %>
                     <p>Rated: <span><%= rating.round(1) %></span> from <span><%= cat.ratings.count %></span> reviews</p>
                   <% else %>
-                    <p>Not yet rated</p>
+                    <p>Not rated yet</p>
                   <% end %>
-                  </p>
               </div>
             </div>
           </div>
