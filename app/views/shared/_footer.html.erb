@@ -11,7 +11,7 @@
           <i data-navbar-target="icon" class="fa-solid fa-paw fa-2xl <%= 'active' if current_page?(cats_path) %>"></i>
         <% end %>
         <%= link_to chatrooms_path do %>
-          <i data-navbar-target="icon" class="fa-regular fa-comment fa-lg <%= 'active' if current_page?(chatrooms_path) %>"></i>
+          <i data-navbar-target="icon" class="fa-regular fa-comment fa-lg <%= 'active' if current_page?(chatrooms_path) || current_page?(chatroom_path) %>"></i>
         <% end %>
         <%= link_to profile_path do %>
           <i data-navbar-target="icon" class="fa-solid fa-user fa-lg <%= 'active' if current_page?(profile_path) %>"></i>
