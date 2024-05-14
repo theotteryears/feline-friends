@@ -1,6 +1,6 @@
 <div class="cat-index-container">
-  <div class="form">
-    <%= form_with url: cats_path, method: :get, class: "d-flex" do %>
+  <div class="cat-index-searchforms">
+    <%= form_with url: cats_path, method: :get, class: "d-flex mr-2" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
@@ -9,14 +9,14 @@
       %>
       <%= button_tag type: 'submit', class: 'btn btn-primary' do %><i class="fa-solid fa-magnifying-glass"></i><% end %>
     <% end %>
+    <%= link_to map_cats_path, class: 'btn btn-primary' do %><i class= "fa-solid fa-map"></i><% end %>
   </div>
-  <%= link_to map_cats_path, class: 'btn btn-primary' do %><i class= "fa-solid fa-map"></i><% end %>
   <div class="cat-card" data-controller="match">
     <% if @cats.any? %>
       <% @cats.each_with_index do |cat, index| %>
-        <div data-match-target="next" id="<%=index%>" class="container mb-5 <%= index.zero? ? '' : 'd-none' %>">
+        <div data-match-target="next" id="<%=index%>" class="container <%= index.zero? ? '' : 'd-none' %>">
           <div class="cat-card-title">
-            <h2><%= cat.name %></h2>
+            <h1><%= cat.name %></h1>
           </div>
           <div class="cat-card-image">
             <div id="carouselExampleControls<%=index%>" class="carousel slide">
@@ -81,7 +81,8 @@
         </div>
       <% end %>
     <% else %>
-      <p>Sorry, no cats found.</p>
+      <p>Sorry, no cats found. Try another city or look directly at the map.</p>
+       <img src="/images/404.jpg" width="300" />
     <%end%>
     </div>
   </div>
