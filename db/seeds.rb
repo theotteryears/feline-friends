@@ -29,7 +29,6 @@ user3.save
 user4 = User.new(role: 1, email: Faker::Internet.email(domain: 'gmail.com'), password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city: "Zurich", details: "")
 user4.save
 
-
 puts 'Creating Cats'
 
 cat = Cat.new(user: user2, name: "Milo", personality: "With fur as fluffy as a cloud and eyes that gleam like polished amber, Milo is our cuddly companion. Whether he's chasing toys or lounging in his favorite spot, Milo fills our home with warmth and love.", age: Faker::Number.within(range: 1..19), breed: Faker::Creature::Cat.breed, address: "London")
@@ -146,11 +145,6 @@ cat = Cat.new(user: user4, name: "Henry", personality: "This eccentric little ba
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/23.jpg")
 cat.img_1.attach(io: file, filename: "23.jpg", content_type: "image/jpg")
 cat.save
-
-puts "Creating Match"
-
-Match.create!(cat_owner: user3, cat_sitter: user1, status: 0)
-Match.create!(cat_owner: user4, cat_sitter: user1, status: 0)
 
 puts 'Creating 5 star cats'
 
