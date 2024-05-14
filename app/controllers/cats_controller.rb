@@ -51,6 +51,11 @@ class CatsController < ApplicationController
     redirect_to cats_path, status: :see_other
   end
 
+  def top
+    @cats = Cat.average_rating
+    authorize current_user
+  end
+
   private
 
   def cat_params
