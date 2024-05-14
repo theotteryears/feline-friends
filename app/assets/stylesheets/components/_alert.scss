@@ -3,8 +3,12 @@
   top: 60px;
   right: 16px;
   z-index: 1000;
-  background-color: $yellow;
-  border: 1px solid $black;
+  background-color: $white;
+  border: 1px solid $yellow;
+  color: $black;
+  &a {
+    color: $black;
+  }
 }
 
 .alert-fade {
@@ -17,4 +21,30 @@
   0% { opacity: 1; }
   50% { opacity: 1; }
   100% { opacity: 0; }
+}
+
+.accepted-alert {
+  position: fixed;
+  top: 60px;
+  right: 16px;
+  z-index: 1000;
+  background-color: $white;
+  border: 1px solid $blue;
+  color: $black;
+  &a {
+    color: $black;
+  }
+}
+
+.declined-alert {
+  position: fixed;
+  top: 60px;
+  right: 16px;
+  z-index: 1000;
+  background-color: $white;
+  border: 1px solid $red;
+  color: $black;
+  &a {
+    color: $black;
+  }
 }
