@@ -10,6 +10,10 @@ class CatsController < ApplicationController
       @cats = @cats.joins(:user).where(users: { city: params[:query].capitalize })
       # @cats = @cats.joins(user:).where("users.city ILIKE :query", query: "%#{params[:query]}%")
     end
+    if params[:cat_id]
+      @selected_cat = @cats.find(params[:cat_id])
+      @cats = @cats.to_a.reject! {|cat| cat == @selected_cat}.unshift(@selected_cat)
+    end
     # @average_rating = @cat.ratings.average(:rating)
   end
 
