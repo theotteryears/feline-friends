@@ -1,5 +1,5 @@
-<div id="main-chatroom" data-controller="modal" class="container chatroom mt-5"
-  data-controller="chatroom-subscription"
+<div id="main-chatroom" data-controller="modal chatroom-subscription" class="container chatroom mt-5"
+
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
@@ -20,7 +20,7 @@
       </div>
     <% end %>
 
-    <div class="messages-box">
+    <div class="messages-form">
       <%= simple_form_for [@chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
         <%= f.input :content, input_html: { autocomplete: 'off' },
           label: false,

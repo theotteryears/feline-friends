@@ -6,7 +6,11 @@ class MatchesController < ApplicationController
 
   def index
     @matches = policy_scope(Match)
+    if current_user.role == "cat_owner"
     @pending_matches = Match.where(cat_id: current_user.cats.select(:id), status: :pending)
+    else
+    @pending_matches = Match.where(user_id: current_user, status: :pending)
+    end
   end
 
   def create

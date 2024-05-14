@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   end
   resources :chatrooms, only: [:index, :show ] do
     resources :messages, only: :create
+    resources :ratings, only: [:new, :create]
   end
   resources :notifications, only: :show
 

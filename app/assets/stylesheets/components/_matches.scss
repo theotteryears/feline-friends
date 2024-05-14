@@ -1,0 +1,35 @@
+.match-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.match-card-trip {
+  overflow: hidden;
+  height: auto;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 25px;
+}
+
+
+.match-card-trip h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.match-card-trip p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+}
+
+.match-card-trip-infos p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+}
+
+span {
+  color: $blue;
+}

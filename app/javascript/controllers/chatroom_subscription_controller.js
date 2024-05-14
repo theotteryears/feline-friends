@@ -11,6 +11,7 @@ export default class extends Controller {
       { received: data => this.#insertMessageAndScrollDown(data) }
     )
     console.log(`Subscribe to the chatroom with the id ${this.chatroomIdValue}.`)
+    this.scrollDown();
   }
 
   #justifyClass(currentUserIsSender) {
@@ -35,6 +36,10 @@ export default class extends Controller {
     const currentUserIsSender = this.currentUserIdValue === data.sender_id
     const messageElement = this.#buildMessageElement(currentUserIsSender, data.message)
     this.messagesTarget.insertAdjacentHTML("beforeend", messageElement)
+    this.scrollDown()
+  }
+
+  scrollDown() {
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
 
