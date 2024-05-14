@@ -1,6 +1,9 @@
 require_relative '../models/cat' # Add this line to import the Cat model
 
 class CatsController < ApplicationController
+  skip_after_action :verify_authorized, only: :map
+  after_action :verify_policy_scoped, only: :map
+
   def index
     @cats = policy_scope(Cat)
     if params[:query].present?
@@ -54,6 +57,18 @@ class CatsController < ApplicationController
   def top
     @cats = Cat.average_rating
     authorize current_user
+  end
+
+  def map
+    @cats = policy_scope(Cat)
+    @markers = @cats.geocoded.map do |cat|
+      {
+        lat: cat.latitude,
+        lng: cat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {cat: cat}),
+        marker_html: render_to_string(partial: "marker", locals: {cat: cat})
+      }
+    end
   end
 
   private
