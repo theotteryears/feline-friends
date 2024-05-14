@@ -21,11 +21,12 @@
 <% end %>
 
 <% if current_user.role == "cat_sitter" %>
-<p class="mb-5">We hope you hear back soon! <br>😻</p>
+
   <% @pending_matches.each do |match| %>
     <div class="match-cards">
       <div class="match-card.trip mb-5">
         <h3>Your match request with <span class="text-yellow"><%= match.cat.name %></span> is <span class="text-red"><%= match.status %></span></h3>
+        <p class="mb-5">We hope you hear back soon! <br>😻</p>
 
       </div>
     </div>
