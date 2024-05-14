@@ -4,9 +4,11 @@
   <% unless chatroom.nil? || chatroom.match.status == "pending" %>
     <div class="cards">
       <div class="card.trip">
-        <h2>Chat between you and <%= current_user == chatroom.match.user ? chatroom.match.cat.user.first_name : chatroom.match.user.first_name %></h2>
+      <%= cl_image_tag(chatroom.match.cat.img_1.key, class: "avatar")%>
+        <h2><%= current_user == chatroom.match.user ? chatroom.match.cat.name : chatroom.match.user.first_name %></h2>
         <%= link_to "Join", chatroom_path(chatroom), class: "btn btn-login mb-3" %>
       </div>
     </div>
   <% end %>
 <% end %>
+<%= render "shared/matches" %>
