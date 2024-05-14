@@ -8,6 +8,7 @@
     %>
     <%= button_tag type: 'submit', class: 'btn btn-primary' do %><i class="fa-solid fa-magnifying-glass"></i><% end %>
   <% end %>
+    <%= link_to map_cats_path, class: 'btn btn-primary' do %><i class= "fa-solid fa-map"></i><% end %>
   <div data-controller="match">
     <% if @cats.any? %>
       <div class="row" data-controller="match">

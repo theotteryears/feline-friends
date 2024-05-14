@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :cat_tags, only: [:new, :create]
     resources :ratings, only: [:new, :create]
     collection do
-      get :top
+      get :top, :map
     end
   end
   get "/cats/:cat_id/matches/", to: "matches#create"
