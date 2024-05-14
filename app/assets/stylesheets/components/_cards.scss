@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.cat-city-searchform {
+.cat-index-searchforms {
   display: flex;
   margin-bottom: 5%;
   margin-top: 15%;
@@ -27,6 +27,9 @@
 .cat-card-title {
   padding-top: 24px;
   padding-bottom: 24px;
+  h1 {
+    color: #F3572E;
+  }
 }
 
 .cat-card-image {
@@ -87,6 +90,15 @@
   // padding-right: 24px;
   border-top: 0.5px lightgray solid;
   line-height: 2;
+  font-family: "Zen Kaku Gothic New";
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  hr {
+    color: #F3572E;
+  }
 }
 
 // Smallest device
