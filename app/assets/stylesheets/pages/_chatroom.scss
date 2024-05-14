@@ -1,7 +1,17 @@
-.messages-box {
+#messages-form {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 80vh;
+  overflow-y: scroll;
 }
+
 
 .message {
   position: relative;
+}
+
+#main-chatroom {
+  justify-content: space-between;
 }

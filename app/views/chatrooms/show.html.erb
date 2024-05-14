@@ -1,10 +1,12 @@
-<div class="container chatroom mt-5"
+<div id="main-chatroom" class="container chatroom mt-5"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-  <h2>Chat between you and <%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %></h2>
+  <div id="chat-title" >
+    <h2>Chat between you and <%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %></h2>
     <p><%= link_to "Rate the cat", new_cat_rating_path(@chatroom.match.cat.id) %> </p>
-  <div class="messages mt-5" data-chatroom-subscription-target="messages">
+  </div>
+  <div id="chat-box " data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
@@ -14,7 +16,7 @@
     <% end %>
   </div>
 
-  <div class="messages-box">
+  <div class="messages-form">
     <%= simple_form_for [@chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
       <%= f.input :content, input_html: { autocomplete: 'off' },
         label: false,
