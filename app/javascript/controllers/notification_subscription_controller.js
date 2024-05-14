@@ -8,11 +8,14 @@ export default class extends Controller {
      this.subscription = createConsumer().subscriptions.create(
        { channel: "NotificationChannel", id: this.currentUserIdValue },
        { received: (data) => {
+        console.log(data);
+        console.log(document)
+        document.querySelector("body").insertAdjacentHTML("beforeend", data);
         this.heartTarget.classList.add("red");
        }}
      );
         console.log(
-          `Subscribe to the notifcation ${this.notificationIdValue}.`
+          `Subscribe to the notification ${this.notificationIdValue}.`
         );
   }
 }
