@@ -1,15 +1,11 @@
-<div id="main-chatroom" data-controller="modal chatroom-subscription" class="container chatroom mt-5"
-
+<div id="main-chatroom" class="container chatroom mt-5"
+  data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
-  <h2>Chat between you and <%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %></h2>
-  <button data-action="click->modal#open" id="rate-cat">Rate <%= @chatroom.match.cat.name %></button>
-  <dialog data-modal-target="modal">
-    <%# <p><%= link_to "Rate the cat", new_cat_rating_path(@chatroom.match.cat.id) %>
-    <%= render "shared/rating", rating: Rating.new, cat: @chatroom.match.cat %>
-    <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
-  </dialog>
+    <h2>Chat between you and <%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %></h2>
+    <button id="rate-cat"><%= link_to "Rate #{@chatroom.match.cat.name}", new_cat_rating_path(@chatroom.match.cat.id) %></button>
+
 
   <div id="chat-box" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
