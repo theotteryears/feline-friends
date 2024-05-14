@@ -6,7 +6,8 @@
     <h2>Chat between you and <%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %></h2>
     <p><%= link_to "Rate the cat", new_cat_rating_path(@chatroom.match.cat.id) %> </p>
   </div>
-  <div id="chat-box " data-chatroom-subscription-target="messages">
+
+  <div id="chat-box" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
@@ -14,16 +15,16 @@
         </div>
       </div>
     <% end %>
-  </div>
 
-  <div class="messages-form">
-    <%= simple_form_for [@chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
-      <%= f.input :content, input_html: { autocomplete: 'off' },
-        label: false,
-        placeholder: "Write your message here...",
-        wrapper_html: {class: "flex-grow-1"}
-      %>
-      <%= button_tag type: 'submit', class: 'btn btn-primary mb-3' do %><i class="fa fa-paper-plane"></i><% end %>
-    <% end %>
+    <div class="messages-form">
+      <%= simple_form_for [@chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
+        <%= f.input :content, input_html: { autocomplete: 'off' },
+          label: false,
+          placeholder: "Write your message here...",
+          wrapper_html: {class: "flex-grow-1"}
+        %>
+        <%= button_tag type: 'submit', class: 'btn btn-primary mb-3' do %><i class="fa fa-paper-plane"></i><% end %>
+      <% end %>
+    </div>
   </div>
 </div>
