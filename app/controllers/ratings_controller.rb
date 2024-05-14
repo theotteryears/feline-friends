@@ -11,7 +11,7 @@ class RatingsController < ApplicationController
     @rating.cat = @cat
     authorize @rating
     if @rating.save
-      redirect_to cats_path
+      redirect_to chatroom_path(@cat)
     else
       render :new, status: :unprocessable_entity
     end

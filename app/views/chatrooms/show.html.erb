@@ -1,9 +1,14 @@
-<div class="container chatroom mt-5"
+<div data-controller="modal" class="container chatroom mt-5"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
   <h2>Chat between you and <%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %></h2>
-    <p><%= link_to "Rate the cat", new_cat_rating_path(@chatroom.match.cat.id) %> </p>
+  <button data-action="click->modal#open" class="btn btn-normal mb-3">Rate <%= @chatroom.match.cat.name %></button>
+  <dialog data-modal-target="modal">
+    <%# <p><%= link_to "Rate the cat", new_cat_rating_path(@chatroom.match.cat.id) %>
+    <%= render "shared/rating", rating: Rating.new, cat: @chatroom.match.cat %>
+    <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
+  </dialog>
   <div class="messages mt-5" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
