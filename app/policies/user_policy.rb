@@ -22,4 +22,7 @@ def destroy?
   record.user == user
 end
 
+def top?
+  true
+end
 end

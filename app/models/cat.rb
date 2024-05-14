@@ -10,4 +10,8 @@ class Cat < ApplicationRecord
   has_one_attached :img_1
   has_one_attached :img_2
   has_one_attached :img_3
+  def self.average_rating
+    ratings = Rating.where(rating: 5).select("cat_id").group("cat_id")
+    ratings.map { |rating| rating.cat }.select { |cat| cat.ratings.average(:rating) == 5 }
+  end
 end

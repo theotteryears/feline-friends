@@ -1,0 +1,32 @@
+<div id="<%= dom_id cat %>">
+  <div class="cat-card-details">
+    <p>
+      <strong>Name:</strong>
+      <%= cat.name %>
+    </p>
+    <p><%= cat.personality%>
+    <p>Breed: <%= cat.breed %></p>
+    <p>Age: <%= cat.age %></p>
+    <p>
+  </div>
+  <p>
+  <%if @average_rating == 5 %>
+    <% average_rating_floor = @average_rating.to_i %>
+    <% average_rating_decimal = @average_rating - average_rating_floor %>
+    <% 5.times do |index| %>
+      <% if index < average_rating_floor %>
+        <i class="fas fa-star" style="color: #FFD43B;"></i>
+      <% elsif index == average_rating_floor && average_rating_decimal > 0 %>
+        <i class="fas fa-star-half" style="color: #FFD43B;"></i>
+      <% else %>
+        <i class="far fa-star" style="color: white;"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+    <% unless @average_rating.nil? && @average_rating != 5 %>
+      <% rating = @average_rating %>
+      <p>Rated: <span><%= rating.round(1) %></span> from <span><%= @cat.ratings.count %></span> reviews</p>
+    <% end %>
+  </p>
+
+</div>
