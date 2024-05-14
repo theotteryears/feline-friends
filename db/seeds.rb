@@ -147,5 +147,9 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/2
 cat.img_1.attach(io: file, filename: "23.jpg", content_type: "image/jpg")
 cat.save
 
+puts 'Creating 5 star cats'
+
+Rating.create!(rating: 5, cat_id: 12)
+Rating.create!(rating: 5, cat_id: 21)
 
 puts 'Finished seeding'
