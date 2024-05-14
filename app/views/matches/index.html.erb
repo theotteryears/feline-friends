@@ -1,21 +1,34 @@
-<div class="container text-center mt-3">
+<div class="container text-center mt-3 w-75">
 <h1 class="mb-5">Pending Matches</h1>
 
-<% @pending_matches.each do |match| %>
-<div class="match-cards">
-  <div class="match-card.trip mb-5">
-    <% if current_user.role == "cat_owner" %>
-    <h3>A match request from <%= match.user.first_name %> about <span><%= match.cat.name %></span></h3>
-    <p>Status: <%= match.status.upcase %></p><br>
-    <div>
-      <%= link_to "Accept", accept_match_path(match), data:{ turbo_method: :patch}, class: "btn btn-login" %>
-      <%= link_to "Decline", decline_match_path(match), data:{ turbo_method: :patch}, class: "btn btn-password" %>
-    </div>
-    <% else %>
-    <h3>Your match request with <span><%= match.cat.name %></span> is <%= match.status.upcase %></h3>
-    <p>We hope you hear back soon! 😸</p>
-    <% end %>
-  </div>
+<% if @pending_matches.empty? %>
+  <h3>There are no pending matches at the moment. Check back later!</h3>
 <% end %>
-</div>
+
+<% if current_user.role == "cat_owner" %>
+  <% @pending_matches.each do |match| %>
+    <div class="match-cards">
+      <div class="match-card.trip mb-5">
+        <h3>A match request from <%= match.user.first_name %> about <span><%= match.cat.name %></span></h3>
+        <p>Status: <%= match.status.upcase %></p><br>
+        <div>
+          <%= link_to "Accept", accept_match_path(match), data:{ turbo_method: :patch}, class: "btn btn-login" %>
+          <%= link_to "Decline", decline_match_path(match), data:{ turbo_method: :patch}, class: "btn btn-password" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<% if current_user.role == "cat_sitter" %>
+<p class="mb-5">We hope you hear back soon! <br>😻</p>
+  <% @pending_matches.each do |match| %>
+    <div class="match-cards">
+      <div class="match-card.trip mb-5">
+        <h3>Your match request with <span><%= match.cat.name %></span> is <%= match.status.upcase %></h3>
+
+      </div>
+    </div>
+  <% end %>
+<% end %>
 </div>
