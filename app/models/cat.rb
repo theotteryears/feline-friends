@@ -14,4 +14,6 @@ class Cat < ApplicationRecord
     ratings = Rating.where(rating: 5).select("cat_id").group("cat_id")
     ratings.map { |rating| rating.cat }.select { |cat| cat.ratings.average(:rating) == 5 }
   end
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
