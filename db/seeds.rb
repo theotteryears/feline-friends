@@ -11,7 +11,7 @@ Chatroom.destroy_all
 
 puts 'Creating Cat Sitter'
 
-user1 = User.new(role: 0, email: "sitter@test.com", password: "123456", first_name: "Chris", last_name: "Collis", city: "Brighton", details: "")
+user1 = User.new(role: 0, email: "sitter@test.com", password: "123456", first_name: "Chris", last_name: "Collis", city: "Brighton", details: "I'm a cat lover who has been around cats my whole life. I have experience with all kinds of cats, from the shy and timid to the bold and adventurous. I'm patient, caring, and attentive, and I'll make sure your feline friend gets all the love and attention they need while you're away. I'm also happy to send you updates and photos so you can see how your cat is doing while you're gone. I look forward to meeting you and your furry friend!")
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715725913/me.jpg")
 user1.img.attach(io: file, filename: "me.jpg", content_type: "image/jpg")
 user1.save
