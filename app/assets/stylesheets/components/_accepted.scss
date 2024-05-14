@@ -1,0 +1,9 @@
+.accepted-alert {
+  position: fixed;
+  top: 60px;
+  right: 16px;
+  z-index: 1000;
+  background-color: $yellow;
+  border: 1px solid $black;
+  color: $black;
+}

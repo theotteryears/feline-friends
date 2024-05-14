@@ -30,7 +30,7 @@ class MatchesController < ApplicationController
     @match.status = "accepted"
     @match.save!
     if @match.status == "accepted"
-      flash.notice = "Match accepted!"
+      flash.notice = ""
       # Notify the cat sitter using WebSockets
       NotificationChannel.broadcast_to(@match.user, render_to_string(partial: "shared/accepted", locals: { match: @match}))
       redirect_to chatroom_path(@match.chatroom)
@@ -43,7 +43,9 @@ class MatchesController < ApplicationController
     @match.status = "declined"
     @match.save!
     if @match.status == "declined"
-      redirect_to user_matches_path(current_user), notice: 'Match rejected.'
+      flash.notice = ""
+      NotificationChannel.broadcast_to(@match.user, render_to_string(partial: "shared/declined", locals: { match: @match}))
+      redirect_to user_matches_path(current_user)
     end
   end
 
