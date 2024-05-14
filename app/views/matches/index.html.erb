@@ -9,8 +9,8 @@
   <% @pending_matches.each do |match| %>
     <div class="match-cards">
       <div class="match-card.trip mb-5">
-        <h3>A match request from <%= match.user.first_name %> about <span><%= match.cat.name %></span></h3>
-        <p>Status: <%= match.status.upcase %></p><br>
+        <h3>A match request from <%= match.user.first_name %> about <span class="text-blue"><%= match.cat.name %></span></h3>
+        <p>Status: <span class="text-blue"><%= match.status.upcase %><span></p><br>
         <div>
           <%= link_to "Accept", accept_match_path(match), data:{ turbo_method: :patch}, class: "btn btn-login" %>
           <%= link_to "Decline", decline_match_path(match), data:{ turbo_method: :patch}, class: "btn btn-password" %>
@@ -25,7 +25,7 @@
   <% @pending_matches.each do |match| %>
     <div class="match-cards">
       <div class="match-card.trip mb-5">
-        <h3>Your match request with <span><%= match.cat.name %></span> is <%= match.status.upcase %></h3>
+        <h3>Your match request with <span class="text-yellow"><%= match.cat.name %></span> is <span class="text-red"><%= match.status %></span></h3>
 
       </div>
     </div>
