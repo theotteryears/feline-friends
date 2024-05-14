@@ -25,4 +25,8 @@ class CatPolicy < ApplicationPolicy
   def top?
     true
   end
+
+  def map?
+    true
+  end
 end
