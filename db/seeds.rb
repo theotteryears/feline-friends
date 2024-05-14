@@ -30,9 +30,6 @@ user4 = User.new(role: 1, email: Faker::Internet.email(domain: 'gmail.com'), pas
 user4.save
 
 
-
-
-
 puts 'Creating Cats'
 
 cat = Cat.new(user: user2, name: "Milo", personality: "With fur as fluffy as a cloud and eyes that gleam like polished amber, Milo is our cuddly companion. Whether he's chasing toys or lounging in his favorite spot, Milo fills our home with warmth and love.", age: Faker::Number.within(range: 1..19), breed: Faker::Creature::Cat.breed, address: "London")
@@ -95,7 +92,7 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/1
 cat.img_1.attach(io: file, filename: "12.jpg", content_type: "image/jpg")
 cat.save
 
-cat = Cat.new(user: user4, name: "Kenneth", personality: "This curious creature is a veritable whirlwind of energy and enthusiasm, bouncing off the walls like a pinball in a funhouse. Whether it's conducting experiments with gravity from the top of the bookshelf or staging impromptu acrobatics routines on the ceiling fan, this cat's boundless energy and relentless curiosity know no bounds.", age: Faker::Number.within(range: 1..19), breed: Faker::Creature::Cat.breed, address: "Winterthur")
+cat = Cat.new(user: user4, name: "Kenneth", personality: "This curious creature is a veritable whirlwind of energy and enthusiasm, bouncing off the walls like a pinball in a funhouse. Whether it's conducting experiments with gravity from the top of the bookshelf or staging impromptu acrobatics routines on the ceiling fan, this cat's boundless energy and relentless curiosity know no bounds.", age: Faker::Number.within(range: 1..19), breed: Faker::Creature::Cat.breed, address: "Barcelona")
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/13.jpg")
 cat.img_1.attach(io: file, filename: "13.jpg", content_type: "image/jpg")
 cat.save
