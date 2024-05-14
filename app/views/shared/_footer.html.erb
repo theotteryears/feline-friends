@@ -1,21 +1,20 @@
 <% if current_user %>
   <div data-controller="notification-subscription navbar" data-notification-subscription-current-user-id-value="<%= current_user.id %>" class="footer">
     <div class="footer-links">
+        <%= link_to :back do %>
+          <i data-navbar-target="icon" class="fa-solid fa-backward fa-lg"></i>
+        <% end %>
         <%= link_to root_path do %>
-          <i data-navbar-target="icon" class="fa-solid fa-house <%= 'active' if current_page?(cats_path) %>"></i>
+          <i data-navbar-target="icon" class="fa-solid fa-paw fa-lg <%= 'active' if current_page?(cats_path) %>"></i>
         <% end %>
         <%= link_to top_cats_path do %>
-          <i data-navbar-target="icon" class="fa-regular fa-star <%= 'active' if current_page?(top_cats_path) %>"></i>
-        <% end %>
-        <%= link_to user_matches_path(current_user) do %>
-          <i data-navbar-target="icon" data-notification-subscription-target="heart" class="fa-solid fa-paw fa-2xl <%= 'active' if current_page?(user_matches_path(current_user)) %>"></i>
-
+          <i data-navbar-target="icon" class="fa-regular fa-star fa-lg <%= 'active' if current_page?(top_cats_path) %>"></i>
         <% end %>
         <%= link_to chatrooms_path do %>
-          <i data-navbar-target="icon" class="fa-regular fa-comment <%= 'active' if current_page?(chatrooms_path) %>"></i>
+          <i data-navbar-target="icon" class="fa-regular fa-comment fa-lg <%= 'active' if current_page?(chatrooms_path) %>"></i>
         <% end %>
         <%= link_to profile_path do %>
-          <i data-navbar-target="icon" class="fa-solid fa-user <%= 'active' if current_page?(profile_path) %>"></i>
+          <i data-navbar-target="icon" class="fa-solid fa-user fa-lg <%= 'active' if current_page?(profile_path) %>"></i>
         <% end %>
     </div>
   </div>
