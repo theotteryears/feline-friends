@@ -22,4 +22,7 @@ class CatPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def top?
+    true
+  end
 end
