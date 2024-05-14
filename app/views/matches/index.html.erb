@@ -1,15 +1,19 @@
-<div class="container text-center mt-5">
-<h1>Pending Matches</h1>
+<div class="container text-center mt-3">
+<h1 class="mb-5">Pending Matches</h1>
 
 <% @pending_matches.each do |match| %>
 <div class="cards">
   <div class="card.trip">
-    <h2>A chat request from <%= match.user.first_name %></h2>
-    <p>Status: <%= match.status %></p><br>
-    <div>
-      <%= link_to "Accept", accept_match_path(match), data:{ turbo_method: :patch}, class: "btn btn-signup" %>
+    <% if current_user.role == "cat_owner" %>
+    <h3>A match request from <%= match.user.first_name %> about <%= match.cat.name %></h3>
+    <p>Status: <%= match.status.upcase %></p><br>
+    <div class="mb-5">
+      <%= link_to "Accept", accept_match_path(match), data:{ turbo_method: :patch}, class: "btn btn-login" %>
       <%= link_to "Decline", decline_match_path(match), data:{ turbo_method: :patch}, class: "btn btn-password" %>
     </div>
+    <% else %>
+    <h3>Your match request with <%= match.cat.name %> is <%= match.status.upcase %></h3>
+    <% end %>
   </div>
 <% end %>
 </div>
