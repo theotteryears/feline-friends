@@ -1,8 +1,23 @@
+.mapboxgl-ctrl-geocoder .mapboxgl-ctrl {
+  display: flex;
+  justify-content: center;
+}
+
+#map_canvas {
+  height: 1000px;
+  width: 100%;
+}
+
 .mapboxgl-popup {
   max-width: 200px;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Zen Kaku Gothic New";
+  border-radius: 10px;
+}
+
+#border {
+  border: 1px solid black;
 }

@@ -1,4 +1,4 @@
-<div id="main-chatroom" data-controller="modal chatroom-subscription" class="container chatroom mt-5"
+<div id="main-chatroom" data-controller="chatroom-subscription" class="container chatroom mt-5"
 
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
@@ -6,12 +6,7 @@
           <%= cl_image_tag(@chatroom.match.cat.img_1.key, height: 50, width: 50, crop: "fill")%>
         <% end %>
   <h2><%= @chatroom.match.cat.name %> (<%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %>)</h2>
-  <button data-action="click->modal#open" id="rate-cat">Rate <%= @chatroom.match.cat.name %></button>
-  <dialog data-modal-target="modal">
-    <%# <p><%= link_to "Rate the cat", new_cat_rating_path(@chatroom.match.cat.id) %>
-    <%= render "shared/rating", rating: Rating.new, cat: @chatroom.match.cat %>
-    <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
-  </dialog>
+
 
   <div id="chat-box" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -30,7 +25,7 @@
           # placeholder: "Write your message here...",
           wrapper_html: {class: "flex-grow-1"}
         %>
-        <%= button_tag type: 'submit', class: 'btn btn-primary mb-3' do %><i class="fa fa-paper-plane"></i><% end %>
+        <%= button_tag type: 'submit', class: 'btn btn-signup mb-3' do %><i class="fa fa-paper-plane"></i><% end %>
       <% end %>
     </div>
   </div>

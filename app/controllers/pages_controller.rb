@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   end
 
   def profile
-
+    @matches = Match.all
+    @past_matches = @matches.select { |match| match.status == "accepted" || "declined"}
   end
 end
