@@ -18,23 +18,41 @@
 
   <div class="text-center mt-3">
     <h2>Your Past Matches</h2>
-    <% @past_matches.each do |match| %>
-      <div class="match-cards">
-        <div class="match-card.trip mb-3" data-controller="modal">
-          <% if match.status == "accepted" %>
-            <p>Your match request with <br><span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span></p>
-            <div class="d-flex flex-column text-center">We hope you had a great time! <br>Please rate the cat 😻
-            <button data-action="click->modal#open" class="btn btn-rate mt-3">Rate <%= match.cat.name %></button>
-            <dialog data-modal-target="modal">
-              <%= render "shared/rating", rating: Rating.new, cat: match.cat %>
-              <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
-            </dialog>
-            </div>
-          <% else %>
-            <p>Sorry that your match request with <br><span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span><br><br>Maybe try another cat 😽</p>
-          <% end %>
+    <% if current_user.role == "cat_sitter" %>
+      <% @past_matches.each do |match| %>
+        <div class="match-cards">
+          <div class="match-card.trip mb-3" data-controller="modal">
+            <% if match.status == "accepted" %>
+              <p>Your match request with <br><span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span></p>
+              <div class="d-flex flex-column text-center">We hope you had a great time! <br>Please rate the cat 😻
+              <button data-action="click->modal#open" class="btn btn-rate mt-3">Rate <%= match.cat.name %></button>
+              <dialog data-modal-target="modal">
+                <%= render "shared/rating", rating: Rating.new, cat: match.cat %>
+                <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
+              </dialog>
+              </div>
+            <% else %>
+              <p>Sorry that your match request with <br><span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span><br><br>Maybe try another cat 😽</p>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
+    <% else %>
+      <% @past_matches.each do |match| %>
+        <div class="match-cards">
+          <div class="match-card.trip mb-3" data-controller="modal">
+            <% if match.status == "accepted" %>
+              <p>You <span class="text-red"><%= match.status %></span> the match from <%= match.user.first_name %> with your cat, <span class="text-blue"><%= match.cat.name %></span></p>
+              <div class="d-flex flex-column text-center">We hope the cat sitter met your expectations! ⭐️
+              </div>
+            <% else %>
+              <p>You <span class="text-red"><%= match.status %></span> the match from <%= match.user.first_name %> with your cat, <span class="text-blue"><%= match.cat.name %></span></p>
+              <div class="d-flex flex-column text-center">We hope you find a more suitable cat sitter next time! 🤞🏻
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -1,7 +1,6 @@
 class ChatroomsController < ApplicationController
   def index
     @chatrooms = policy_scope(Chatroom)
-    @chatrooms = Chatroom.all
     @chatroom = Chatroom.where(user: current_user)
     @match = Match.where(user: current_user)
     if current_user.role == "cat_owner"
@@ -9,6 +8,9 @@ class ChatroomsController < ApplicationController
     else
     @pending_matches = Match.where(user_id: current_user, status: :pending)
     end
+    # if params[:query].present?
+    #   @chatrooms = @chatrooms.joins(:match).where(cat: { name: params[:query].capitalize })
+    # end
   end
 
   def show
