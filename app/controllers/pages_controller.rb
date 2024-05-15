@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     if current_user&.cat_sitter?
       redirect_to cats_path
     elsif current_user&.cat_owner?
-      redirect_to sitters_path
+      redirect_to user_matches_path(current_user)
     end
   end
 
