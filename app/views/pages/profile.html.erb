@@ -32,10 +32,10 @@
               <%= render "shared/rating", rating: Rating.new, cat: match.cat %>
               <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
             </dialog>
+            </div>
           <% else %>
             <p>Sorry that your match request with <br><span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span><br><br>Maybe try another cat 😽</p>
           <% end %>
-          </div>
         </div>
       </div>
     <% end %>
