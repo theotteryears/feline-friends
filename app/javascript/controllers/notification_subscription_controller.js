@@ -3,7 +3,7 @@ import { createConsumer } from "@rails/actioncable";
 // Connects to data-controller="notification-subscription"
 export default class extends Controller {
   static values = { notificationId: Number, currentUserId: Number }
-  static targets = ["heart"]
+  static targets = ["chat"]
   connect() {
     console.log(createConsumer().subscriptions)
      this.subscription = createConsumer().subscriptions.create(
@@ -12,7 +12,7 @@ export default class extends Controller {
         console.log(data);
         // console.log(document)
         document.querySelector("body").insertAdjacentHTML("beforeend", data);
-        this.heartTarget.classList.add("red");
+        this.chatTarget.classList.add("red");
        }}
      );
         console.log(
