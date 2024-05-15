@@ -14,12 +14,17 @@
   }
 
   #chat-btn {
-    width: min-content;
+    width:max-content ;
     height: min-content;
     border-radius: 4px;
+    float: right;
+    background-color: lightgrey;
+    color: $black;
   }
 
   #message_content {
     border-radius: 4px;
     height: 42px;
+    margin-left: 9px;
+    margin-bottom: 10px;
   }
