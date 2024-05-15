@@ -1,0 +1,25 @@
+
+ .img-pair {
+    float:left;
+    margin-top:-10%;
+  }
+  .half-img {
+    display:inline-block;
+    // move to cover part of the first image
+    margin-left:-7%;
+  }
+  h2 {
+    display: inline-block;
+    font-size: 1.25em;
+  }
+
+  #chat-btn {
+    width: min-content;
+    height: min-content;
+    border-radius: 4px;
+  }
+
+  #message_content {
+    border-radius: 4px;
+    height: 42px;
+  }

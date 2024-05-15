@@ -12,9 +12,9 @@
       </div>
       <div class="content">
         <% if chatroom.created_at.to_date == Date.today %>
-          <p><small><%= chatroom.created_at.strftime("%H:%M") %></small></p>
+          <p><small><%= chatroom.created_at.strftime("%H:%M %p") %></small></p>
         <% else %>
-          <p><small><%= chatroom.created_at.strftime("%d-%m %H:%M") %></small></p>
+          <p><small><%= chatroom.created_at.strftime("%d-%m") %></small></p>
         <% end %>
       </div>
       </a>
