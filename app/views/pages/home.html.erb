@@ -1,19 +1,19 @@
 <div class="home-container">
-  <div class="title">
-    <h1 class="my-font" ><span id="red" style="font-size: 4rem">F</span>eline <span id="blue" style="font-size: 4rem">F</span>riends</h1>
-  </div>
   <div class="logo">
+    <div class="title">
+      <h1><span id="red" class="my-font" style="font-size: 4rem">F</span>eline <span id="blue" class="my-font" style="font-size: 4rem">F</span>riends</h1>
+    </div>
     <%= image_tag "MAIN LOGO.jpeg", class: "logo" %>
     <div class="baseline">
-      <p>Connecting cats and cat lovers <br>one swipe at a time</p>
+      <p>Connecting cats and cat lovers <br><span id="red" style="font-family: Dosis; font-size: 1.2rem; font-weight: 500;">one swipe at a time</span></p>
     </div>
-  </div>
-  <div class="buttons">
-    <div class="signup-btn">
-      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-signup" %>
-    </div>
-    <div class="login-btn">
-      <%= link_to "Log In", new_user_session_path, class: "btn btn-login" %>
+    <div class="buttons">
+      <div class="signup-btn">
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-signup" %>
+      </div>
+      <div class="login-btn">
+        <%= link_to "Log In", new_user_session_path, class: "btn btn-login" %>
+      </div>
     </div>
   </div>
 </div>

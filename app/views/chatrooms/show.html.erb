@@ -2,10 +2,17 @@
 
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-        <% if @chatroom.match.cat.img_1.attached? %>
-          <%= cl_image_tag(@chatroom.match.cat.img_1.key, height: 50, width: 50, crop: "fill")%>
-        <% end %>
-  <h2><%= @chatroom.match.cat.name %> (<%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %>)</h2>
+    <div class="img-pair">
+      <% if @chatroom.match.cat.img_1.attached? %>
+        <%= cl_image_tag(@chatroom.match.cat.img_1.key, height: 40, width: 40, crop: "fill", class: "avatar")%>
+      <% end %>
+      <% if @chatroom.match.cat.user.img.attached? %>
+        <%= cl_image_tag(@chatroom.match.cat.user.img.key, height: 40, width: 40, crop: "fill", class: "half-img avatar")%>
+      <% end %>
+      <h2><%= @chatroom.match.cat.name %>(<%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %>)</h2>
+    </div>
+
+
 
 
   <div id="chat-box" data-chatroom-subscription-target="messages">
@@ -25,7 +32,7 @@
           # placeholder: "Write your message here...",
           wrapper_html: {class: "flex-grow-1"}
         %>
-        <%= button_tag type: 'submit', class: 'btn btn-signup mb-3' do %><i class="fa fa-paper-plane"></i><% end %>
+        <%= button_tag type: 'submit', class: 'btn btn-signup mb-3', id: "chat-btn" do %><i class="fa fa-paper-plane"></i><% end %>
       <% end %>
     </div>
   </div>

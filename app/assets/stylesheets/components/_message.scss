@@ -1,21 +1,32 @@
 .message-row {
   margin-bottom: 10px;
-  padding: 8px;
+  padding: 4px;
 }
 
 // To style the message itself
-.sender-style, .receiver-style {
+.sender-style,
+.receiver-style {
   width: 70%;
   max-width: 400px;
   border-radius: 4px;
-  padding: 8px;
-  min-height: 80px;
+  padding: 0 8px;
+  min-height: 30px;
 }
 
 .sender-style {
-  background-color: #E4B41B;
+  background-color: #e4b41b;
 }
 
 .receiver-style {
-  background-color: #F3572E;
+  background-color: #f3572e;
+}
+
+#chat-box {
+  margin-top: 8px;
+}
+
+.messages-form {
+  display: flex;
+  justify-content: center;
+  
 }
