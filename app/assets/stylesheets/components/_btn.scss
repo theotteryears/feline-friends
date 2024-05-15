@@ -1,9 +1,10 @@
 .btn-signup {
   text-align: center;
+  border: 2px solid $black;
   width: 6.5rem;
   height: 3rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   background: $blue;
   color: $white;
   font-size: 1rem;
@@ -16,10 +17,11 @@
 
 .btn-login {
   text-align: center;
+  border: 2px solid $black;
   width: 6.5rem;
   height: 3rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   background: $yellow;
   color: $white;
   font-size: 1rem;
@@ -33,9 +35,10 @@
 .btn-password {
   text-align: center;
   width: auto;
+  border: 2px solid $black;
   height: 3rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   background: $red;
   color: $white;
   font-size: 1rem;
@@ -48,10 +51,11 @@
 
 .btn-normal {
   text-align: center;
+  border: 2px solid $black;
   width: auto;
   height: 3rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   background: $blue;
   color: $white;
   font-size: 1rem;
@@ -65,10 +69,11 @@
 .btn-rate {
   text-align: center;
   align-self: center;
+  border: 2px solid $black;
   width: 50%;
   height: 3rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   background: $yellow;
   color: #FFFFFF;
   font-size: 1rem;
