@@ -1,6 +1,10 @@
-.mapboxgl-ctrl-geocoder .mapboxgl-ctrl {
-  display: flex;
-  justify-content: center;
+.mapboxgl-ctrl-top-right
+.mapboxgl-ctrl {
+  margin: 0 !important;
+}
+
+.mapboxgl-ctrl-top-right {
+  width: 100% !important;
 }
 
 #map_canvas {
