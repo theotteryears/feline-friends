@@ -66,7 +66,9 @@ class CatsController < ApplicationController
 
   def top
     @cats = Cat.average_rating
+
     authorize current_user
+
   end
 
   def map
