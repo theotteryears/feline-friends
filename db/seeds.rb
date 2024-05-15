@@ -147,10 +147,13 @@ Rating.create!(rating: 5, cat_id: 21)
 
 puts 'Creating Matches'
 
-match = Match.new(cat: Cat.last, user: User.first, status: 1)
+match = Match.new(cat: Cat.last, user: User.first, status: "accepted")
 match.save
 
-match = Match.new(cat: Cat.third, user: User.first, status: 1)
+match = Match.new(cat: Cat.third, user: User.first, status: "accepted")
+match.save
+
+match = Match.new(cat: Cat.last, user: User.first, status: "declined")
 match.save
 
 puts 'Finished seeding'
