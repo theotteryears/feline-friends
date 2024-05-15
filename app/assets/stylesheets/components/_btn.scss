@@ -9,6 +9,8 @@
   color: $white;
   font-size: 1rem;
   font-weight: 500;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
   &:hover {
     background: darken($blue, 10%);
     color: $white;
@@ -26,6 +28,8 @@
   color: $white;
   font-size: 1rem;
   font-weight: 500;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
   &:hover {
     background: darken($yellow, 10%);
     color: $white;
@@ -43,6 +47,8 @@
   color: $white;
   font-size: 1rem;
   font-weight: 500;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
   &:hover {
     background: darken($red, 10%);
     color: $white;
@@ -60,6 +66,8 @@
   color: $white;
   font-size: 1rem;
   font-weight: 500;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
   &:hover {
     background: darken($blue, 10%);
     color: $white;
@@ -78,6 +86,8 @@
   color: #FFFFFF;
   font-size: 1rem;
   font-weight: 500;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
   &:hover {
     background: darken($blue, 10%);
     color: $white;
