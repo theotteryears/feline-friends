@@ -43,11 +43,11 @@
           <div class="match-card.trip mb-3" data-controller="modal">
             <% if match.status == "accepted" %>
               <p>You <span class="text-red"><%= match.status %></span> the match from <%= match.user.first_name %> with your cat, <span class="text-blue"><%= match.cat.name %></span></p>
-              <div class="d-flex flex-column text-center">We hope the cat sitter met your expectations!
+              <div class="d-flex flex-column text-center">We hope the cat sitter met your expectations! ⭐️
               </div>
             <% else %>
               <p>You <span class="text-red"><%= match.status %></span> the match from <%= match.user.first_name %> with your cat, <span class="text-blue"><%= match.cat.name %></span></p>
-              <div class="d-flex flex-column text-center">We hope you find a more suitable cat sitter next time!
+              <div class="d-flex flex-column text-center">We hope you find a more suitable cat sitter next time! 🤞🏻
               </div>
             <% end %>
           </div>
