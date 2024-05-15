@@ -4,20 +4,17 @@
     <%= link_to "Edit", edit_user_registration_path, class: "btn btn-signup" %>
     <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-password" %>
   </div>
-  <div class="d-flex justify-content-center gap-3 mb-5">
-    <div class="match-card-profile">
+  <div>
     <% if current_user.img.attached? %>
       <%= cl_image_tag current_user.img.key, class: "avatar-square" %>
     <% end %>
     </div>
-     <div class="match-cards">
-    <div class="match-card.trip">
+      <div class="match-cards mb-5">
       <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
-      <br><%= current_user.city %><br><br>
-      <%= current_user.email %>
+      <%= current_user.city %>
+      <br><%= current_user.email %>
     </div>
-  </div>
-  </div>
+  <div>
 
   <div class="text-center mt-3">
     <h2>Your Past Matches</h2>
