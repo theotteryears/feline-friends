@@ -1,16 +1,19 @@
-<h1>Messages</h1>
-
+<h1>Chat</h1>
 <% @chatrooms.each do |chatroom| %>
   <% unless chatroom.nil? || chatroom.match.status == "pending" %>
     <div class="cards">
-      <div class="card.trip">
-        <% if chatroom.match.cat.img_1.attached? %>
-          <%= cl_image_tag(chatroom.match.cat.img_1.key, height: 50, width: 50, crop: "fill")%>
-        <% end %>
-
-        <h2><%= current_user == chatroom.match.user ? chatroom.match.cat.name : chatroom.match.user.first_name %></h2>
-        <%= link_to "Join", chatroom_path(chatroom), class: "btn btn-login mb-3" %>
-      </div>
+      <a href="<%= chatroom_path(chatroom) %>" class="card.trip cat-chat-link">
+      <% if chatroom.match.cat.img_1.attached? %>
+        <%= cl_image_tag(chatroom.match.cat.img_1.key, height: 50, width: 50, crop: "fill", class: "avatar")%>
+      <% end %>
+      <h2><%= current_user == chatroom.match.user ? chatroom.match.cat.name : chatroom.match.user.first_name %></h2>
+      <% if chatroom.created_at.to_date == Date.today %>
+        <p class="content"><small><%= chatroom.created_at.strftime("%H:%M") %></small></p>
+      <% else %>
+        <p class="content"><small><%= chatroom.created_at.strftime("%d-%m %H:%M") %></small></p>
+      <% end %>
+      </a>
+    </div>
     </div>
   <% end %>
 <% end %>
