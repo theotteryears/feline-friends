@@ -1,20 +1,29 @@
-<h1>Messages</h1>
+<h1>Chat</h1>
 
 <% @chatrooms.each do |chatroom| %>
   <% unless chatroom.nil? || chatroom.match.status == "pending" %>
     <div class="cards">
-      <div class="card.trip">
-        <% if chatroom.match.cat.img_1.attached? %>
-          <%= cl_image_tag(chatroom.match.cat.img_1.key, height: 50, width: 50, crop: "fill")%>
-        <% end %>
-
+      <a href="<%= chatroom_path(chatroom) %>" class="card.trip cat-chat-link">
+      <% if chatroom.match.cat.img_1.attached? %>
+        <%= cl_image_tag(chatroom.match.cat.img_1.key, height: 40, width: 40, crop: "fill", class: "avatar")%>
+      <% end %>
+      <div class="title">
         <h2><%= current_user == chatroom.match.user ? chatroom.match.cat.name : chatroom.match.user.first_name %></h2>
-        <%= link_to "Join", chatroom_path(chatroom), class: "btn btn-login mb-3" %>
       </div>
+      <div class="content">
+        <% if chatroom.created_at.to_date == Date.today %>
+          <p><small><%= chatroom.created_at.strftime("%H:%M %p") %></small></p>
+        <% else %>
+          <p><small><%= chatroom.created_at.strftime("%d-%m") %></small></p>
+        <% end %>
+      </div>
+      </a>
+    </div>
     </div>
   <% end %>
 <% end %>
-<div data-controller="modal">
+
+<div class="pending" data-controller="modal">
   <button data-action="click->modal#open" class="btn btn-normal mb-3">Pending</button>
   <dialog data-modal-target="modal">
     <%= render "shared/matches", cat: @cat %>

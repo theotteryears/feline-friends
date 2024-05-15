@@ -28,9 +28,22 @@
 
 body {
   background-color: white;
+  font-family: $body-font;
 }
 
 a {
   text-decoration: none;
   color: $black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headers-font;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
 }
