@@ -145,4 +145,12 @@ puts 'Creating 5 star cats'
 Rating.create!(rating: 5, cat_id: 12)
 Rating.create!(rating: 5, cat_id: 21)
 
+puts 'Creating Matches'
+
+match = Match.new(cat: Cat.last, user: User.first, status: 1)
+match.save
+
+match = Match.new(cat: Cat.third, user: User.first, status: 1)
+match.save
+
 puts 'Finished seeding'
