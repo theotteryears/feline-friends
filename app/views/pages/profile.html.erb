@@ -13,6 +13,13 @@
     <p><%= current_user.email %> - <%= current_user.city %></p>
   <div class="text-center mt-3">
     <h2><span class="text-blue">Past Matches</span></h2>
-    <p>Coming soon!</p>
+    <% @past_matches.each do |match| %>
+      <div class="match-cards">
+        <div class="match-card.trip mb-3">
+        <p>Your match request with <br><span class="text-yellow"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span></p>
+        We hope you had a great time! Please rate the cat 😻
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>

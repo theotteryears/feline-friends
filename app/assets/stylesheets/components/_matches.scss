@@ -1,14 +1,17 @@
 .match-cards {
   display: grid;
   grid-template-columns: 1fr;
+  border: 1px solid $black;
+  padding: 1rem;
+  border-radius: 25px;
+  margin: 1rem 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .match-card-trip {
   overflow: hidden;
   height: auto;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 25px;
 }
 
 
@@ -19,13 +22,13 @@
 }
 
 .match-card-trip p {
-  font-size: 16px;
+  font-size: 14px;
   opacity: .7;
   margin: 0;
 }
 
 .match-card-trip-infos p {
-  font-size: 16px;
+  font-size: 14px;
   opacity: .7;
   margin: 0;
 }
