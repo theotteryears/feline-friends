@@ -1,16 +1,4 @@
 <div class="cat-index-container">
-  <div class="cat-index-searchforms">
-    <%= form_with url: cats_path, method: :get, class: "d-flex mr-2" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Browse cats by city",
-        autocomplete: "off"
-      %>
-      <%= button_tag type: 'submit', class: 'btn btn-primary' do %><i class="fa-solid fa-magnifying-glass"></i><% end %>
-    <% end %>
-    <%= link_to map_cats_path, class: 'btn btn-primary' do %><i class= "fa-solid fa-map"></i><% end %>
-  </div>
   <div class="cat-card" data-controller="match">
     <% if @cats.any? %>
       <% @cats.each_with_index do |cat, index| %>
@@ -19,45 +7,23 @@
             <h1><%= cat.name %></h1>
           </div>
           <div class="cat-card-image">
-            <div id="carouselExampleControls<%=index%>" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <% if cat.img_1.attached? %>
-                    <%= cl_image_tag(cat.img_1.key, height: 350, width: 350, crop: "fill")%>
-                  <% end %>
-                </div>
-                <div class="carousel-item">
-                  <% if cat.img_2.attached? %>
-                    <%= cl_image_tag(cat.img_2.key, height: 350, width: 350, crop: "fill")%>
-                  <% end %>
-                </div>
-                <div class="carousel-item">
-                  <% if cat.img_3.attached? %>
-                    <%= cl_image_tag(cat.img_3.key, height: 350, width: 350, crop: "fill")%>
-                  <% end %>
-                </div>
-                <div class="cat-card-actions">
-                  <%= button_to cat_matches_path(cat), class: "btn-heart", data: {turbo_method: :post} do %>
-                    <i class="fa-solid fa-paw"></i>
-                  <% end %>
-                  <button class="btn-trash"><i  data-action="click->match#next"  data-id="<%=index%>" class="fa-solid fa-xmark"></i></button>
-                </div>
+            <% if cat.img_1.attached? %>
+              <div class="cat-picture">
+                <%= cl_image_tag(cat.img_1.key, height: 400, width: 400, crop: "fill") %>
+                  <div class="cat-card-actions">
+                    <%= button_to cat_matches_path(cat), class: "btn-paw", data: {turbo_method: :post} do %>
+                      <i class="fa-solid fa-paw"></i>
+                    <% end %>
+                    <button class="btn-trash"><i  data-action="click->match#next"  data-id="<%=index%>" class="fa-solid fa-xmark"></i></button>
+                  </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls<%=index%>" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls<%=index%>" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
+              <% end %>
           </div>
           <div class="cat-card-details">
             <p><%= cat.personality%><br/>
             <hr>
-            Breed: <%= cat.breed %><br/>
-            Age: <%= cat.age %>
+            <span id="red" style="font-family: Dosis; font-size: 1.1rem; font-weight: 700;">Breed:</span> <%= cat.breed %><br/>
+            <span id="red" style="font-family: Dosis; font-size: 1.1rem; font-weight: 700;">Age:</span> <%= cat.age %>
             <%if cat.ratings.average(:rating) != nil %>
               <% average_rating_floor = cat.ratings.average(:rating).to_i %>
               <% average_rating_decimal = cat.ratings.average(:rating) - average_rating_floor %>
@@ -75,7 +41,7 @@
                 <% rating = cat.ratings.average(:rating) %>
                 <p>Rated: <span><%= rating.round(1) %></span> from <span><%= cat.ratings.count %></span> reviews</p>
               <% else %>
-                <p>Not rated yet</p>
+                <p><span id="red" style="font-family: Dosis; font-size: 1.1rem; font-weight: 700;">Not rated yet</span></p>
               <% end %>
           </div>
         </div>
