@@ -9,7 +9,7 @@
           <div class="cat-card-image">
             <% if cat.img_1.attached? %>
               <div class="cat-picture">
-                <%= cl_image_tag(cat.img_1.key, height: 400, width: 400, crop: "fill") %>
+                <%= cl_image_tag(cat.img_1.key) %>
                   <div class="cat-card-actions">
                     <%= button_to cat_matches_path(cat), class: "btn-paw", data: {turbo_method: :post} do %>
                       <i class="fa-solid fa-paw"></i>

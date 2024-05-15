@@ -3,7 +3,7 @@
   width: 100vw;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
+  // padding-top: 10px;
 }
 
 // .cat-index-searchforms {
@@ -20,7 +20,7 @@
   justify-content: center;
   align-items: center;
   // padding: 24px;
-  // margin: 10%;
+  margin-top: 2%;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
@@ -30,7 +30,9 @@
   padding-top: 10px;
   padding-bottom: 10px;
   h1 {
+    font-size: 3rem;
     color: #F3572E;
+    text-shadow: 0.05em 0.045em black;
   }
 }
 
@@ -44,16 +46,23 @@
   display: flex;
   position: relative;
   width: 100%;
+  height: 65dvh;
   justify-content: center;
   border-radius: 2%;
+  img {
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
-.cl_image_tag {
-  display: flex;
-  position: relative;
-  width: 100%;
-  justify-content: center;
-}
+// .cl_image_tag {
+//   display: flex;
+//   position: relative;
+//   width: 100%;
+//   justify-content: center;
+// }
 
 .cat-card-actions {
   display: flex;
@@ -104,6 +113,14 @@
 
   hr {
     color: #F3572E;
+  }
+
+  p {
+    font-family: "Zen Kaku Gothic New";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 }
 
