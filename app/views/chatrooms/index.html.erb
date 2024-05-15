@@ -13,4 +13,11 @@
     </div>
   <% end %>
 <% end %>
-<%= render "shared/matches" %>
+<div data-controller="modal">
+    <button data-action="click->modal#open" class="btn btn-normal mb-3">Pending</button>
+    <dialog data-modal-target="modal">
+      <%= render "shared/matches", cat: @cat %>
+      <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
+    </dialog>
+  </div>
+
