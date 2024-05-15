@@ -1,11 +1,10 @@
 .alert {
-  position: fixed;
-  top: 40px;
-  right: 16px;
+  position: relative;
+  top: 0;
   z-index: 1000;
-  background-color: $white;
-  border: 1px solid $yellow;
-  color: $black;
+  background-color: $yellow;
+  border: 1px solid $black;
+  color: #FFFFFF;
   border-radius: 1rem;
   &a {
     color: $black;
@@ -27,11 +26,11 @@
 .accepted-alert {
   position: fixed;
   top: 40px;
-  right: 16px;
+  right: 10px;
   z-index: 1000;
-  background-color: $white;
-  border: 1px solid $blue;
-  color: $black;
+  background-color: $blue;
+  border: 1px solid $black;
+  color: #FFFFFF;
   border-radius: 1rem;
 
   &a {
@@ -42,11 +41,11 @@
 .declined-alert {
   position: fixed;
   top: 40px;
-  right: 16px;
+  right: 10px;
   z-index: 1000;
-  background-color: $white;
-  border: 1px solid $red;
-  color: $black;
+  background-color: $red;
+  border: 1px solid $black;
+  color: #FFFFFF;
   border-radius: 1rem;
 
   &a {
