@@ -19,7 +19,9 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Zen Kaku Gothic New";
-  border-radius: 10px;
+  border-radius: 0.25rem;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
 }
 
 #border {

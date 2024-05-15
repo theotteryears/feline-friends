@@ -1,5 +1,7 @@
 .btn-signup {
   text-align: center;
+  text-align: center;
+  border: 2px solid $black;
   width: 6.5rem;
   height: 3rem;
   padding: 0.5rem 1.25rem;
@@ -18,6 +20,7 @@
 
 .btn-login {
   text-align: center;
+  border: 2px solid $black;
   width: 6.5rem;
   height: 3rem;
   padding: 0.5rem 1.25rem;
@@ -37,6 +40,7 @@
 .btn-password {
   text-align: center;
   width: auto;
+  border: 2px solid $black;
   height: 3rem;
   padding: 0.5rem 1.25rem;
   border-radius: 0.25rem;
@@ -54,8 +58,9 @@
 
 .btn-normal {
   text-align: center;
+  border: 2px solid $black;
   width: auto;
-  height: 3rem;
+  height: 4rem;
   padding: 0.5rem 1.25rem;
   border-radius: 0.25rem;
   background: $blue;
@@ -73,7 +78,8 @@
 .btn-rate {
   text-align: center;
   align-self: center;
-  width: 50%;
+  border: 2px solid $black;
+  width: 70%;
   height: 3rem;
   padding: 0.5rem 1.25rem;
   border-radius: 0.25rem;
@@ -84,7 +90,7 @@
   border: 1px solid black;
   box-shadow: 4px 4px black;
   &:hover {
-    background: darken($blue, 10%);
+    background: darken($yellow, 10%);
     color: $white;
   }
 }

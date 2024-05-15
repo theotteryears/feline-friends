@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container text-center p-5">
   <%= simple_form_for [cat, rating] do |f| %>
     <%= f.input :rating, collection: (1..5).to_a, input_html: {data: {controller: "star-rating"}} %>
     <%= f.submit "Submit rating", class: "btn btn-normal" %>
