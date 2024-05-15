@@ -9,10 +9,29 @@
       <%= cl_image_tag current_user.img.key, class: "avatar-square" %>
     <% end %>
   </div>
-    <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
-    <p><%= current_user.email %> - <%= current_user.city %></p>
-  <div class="text-center mt-3">
-    <h2><span class="text-blue">Past Matches</span></h2>
-    <p>Coming soon!</p>
+  <div class="match-cards">
+    <div class="match-card.trip mb-3">
+      <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
+      <%= current_user.email %> - <%= current_user.city %>
+    </div>
   </div>
+  <div class="text-center mt-3">
+    <h2>Your Past Matches</h2>
+    <% @past_matches.each do |match| %>
+      <div class="match-cards">
+        <div class="match-card.trip mb-3" data-controller="modal">
+        <p>Your match request with <br><span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span></p>
+        <div class="d-flex flex-column text-center">We hope you had a great time! <br>Please rate the cat 😻
+        <%# <div> %>
+          <button data-action="click->modal#open" class="btn btn-rate mt-3">Rate <%= match.cat.name %></button>
+          <dialog data-modal-target="modal">
+            <%= render "shared/rating", rating: Rating.new, cat: match.cat %>
+            <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
+          </dialog>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 </div>
