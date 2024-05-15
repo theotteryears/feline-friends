@@ -1,32 +1,47 @@
 <div id="<%= dom_id cat %>">
-  <div class="cat-card-details">
-    <p>
-      <strong>Name:</strong>
-      <%= cat.name %>
-    </p>
-    <p><%= cat.personality%>
-    <p>Breed: <%= cat.breed %></p>
-    <p>Age: <%= cat.age %></p>
-    <p>
-  </div>
-  <p>
-  <%if @average_rating == 5 %>
-    <% average_rating_floor = @average_rating.to_i %>
-    <% average_rating_decimal = @average_rating - average_rating_floor %>
-    <% 5.times do |index| %>
-      <% if index < average_rating_floor %>
-        <i class="fas fa-star" style="color: #FFD43B;"></i>
-      <% elsif index == average_rating_floor && average_rating_decimal > 0 %>
-        <i class="fas fa-star-half" style="color: #FFD43B;"></i>
-      <% else %>
-        <i class="far fa-star" style="color: white;"></i>
-      <% end %>
-    <% end %>
-  <% end %>
-    <% unless @average_rating.nil? && @average_rating != 5 %>
-      <% rating = @average_rating %>
-      <p>Rated: <span><%= rating.round(1) %></span> from <span><%= @cat.ratings.count %></span> reviews</p>
-    <% end %>
-  </p>
+
+    <div class="container ">
+      <div class="top-cats cat-card-details">
+        <div class="cat-card-title">
+          <h1><%= cat.name %></h1>
+        </div>
+        <div class="cat-card-image">
+          <% if cat.img_1.attached? %>
+            <div class="cat-picture">
+              <%= cl_image_tag(cat.img_1.key, height: 400, width: 400, crop: "fill") %>
+                <div class="heart-cat cat-card-actions">
+                  <%= button_to cat_matches_path(cat), class: "btn-paw", data: {turbo_method: :post}, params: {top: true} do %>
+                    <i class="fa-solid fa-paw"></i>
+                  <% end %>
+                </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="cat-card-details">
+          <p><%= cat.personality %><br/>
+          <hr>
+          Breed: <%= cat.breed %><br/>
+          Age: <%= cat.age %>
+          <%if @average_rating == 5 %>
+            <% average_rating_floor = @average_rating.to_i %>
+            <% average_rating_decimal = @average_rating - average_rating_floor %>
+            <% 5.times do |index| %>
+              <% if index < average_rating_floor %>
+                <i class="fas fa-star" style="color: #FFD43B;"></i>
+              <% elsif index == average_rating_floor && average_rating_decimal > 0 %>
+                <i class="fas fa-star-half" style="color: #FFD43B;"></i>
+              <% else %>
+                <i class="far fa-star" style="color: white;"></i>
+              <% end %>
+            <% end %>
+          <% end %>
+          <% unless @average_rating.nil? && @average_rating != 5 %>
+            <% rating = @average_rating %>
+            <p>Rated: <span><%= rating.round(1) %></span> from <span><%= @cat.ratings.count %></span> reviews</p>
+          <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
 
 </div>
