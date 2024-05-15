@@ -4,9 +4,10 @@
   <% unless chatroom.nil? || chatroom.match.status == "pending" %>
     <div class="cards">
       <div class="card.trip">
-      <% if chatroom.match.cat.img_1.attached? %>
-        <%= cl_image_tag(url_for(chatroom.match.cat.img_1), class: "avatar")%>
-      <% end %>
+        <% if chatroom.match.cat.img_1.attached? %>
+          <%= cl_image_tag(chatroom.match.cat.img_1.key, height: 50, width: 50, crop: "fill")%>
+        <% end %>
+
         <h2><%= current_user == chatroom.match.user ? chatroom.match.cat.name : chatroom.match.user.first_name %></h2>
         <%= link_to "Join", chatroom_path(chatroom), class: "btn btn-login mb-3" %>
       </div>
@@ -14,10 +15,9 @@
   <% end %>
 <% end %>
 <div data-controller="modal">
-    <button data-action="click->modal#open" class="btn btn-normal mb-3">Pending</button>
-    <dialog data-modal-target="modal">
-      <%= render "shared/matches", cat: @cat %>
-      <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
-    </dialog>
-  </div>
-
+  <button data-action="click->modal#open" class="btn btn-normal mb-3">Pending</button>
+  <dialog data-modal-target="modal">
+    <%= render "shared/matches", cat: @cat %>
+    <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
+  </dialog>
+</div>

@@ -2,9 +2,9 @@
 
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-  <% if @chatroom.match.cat.img_1.attached? %>
-    <%= cl_image_tag(url_for(@chatroom.match.cat.img_1), class: "avatar")%>
-  <% end %>
+        <% if @chatroom.match.cat.img_1.attached? %>
+          <%= cl_image_tag(@chatroom.match.cat.img_1.key, height: 50, width: 50, crop: "fill")%>
+        <% end %>
   <h2><%= @chatroom.match.cat.name %> (<%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %>)</h2>
   <button data-action="click->modal#open" id="rate-cat">Rate <%= @chatroom.match.cat.name %></button>
   <dialog data-modal-target="modal">
