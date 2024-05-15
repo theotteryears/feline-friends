@@ -1,8 +1,8 @@
-<h1>Chat</h1>
+<h1>Chats</h1>
 
 <% @chatrooms.each do |chatroom| %>
   <% unless chatroom.nil? || chatroom.match.status == "pending" %>
-    <div class="cards">
+    <div class="match-cards">
       <a href="<%= chatroom_path(chatroom) %>" class="card.trip cat-chat-link">
       <% if chatroom.match.cat.img_1.attached? %>
         <%= cl_image_tag(chatroom.match.cat.img_1.key, height: 40, width: 40, crop: "fill", class: "avatar")%>

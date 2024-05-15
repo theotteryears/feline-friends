@@ -1,7 +1,10 @@
 
  .img-pair {
+    display: flex;
+    align-items: center;
     float:left;
     margin-top:-10%;
+    margin-left: 24px;
   }
   .half-img {
     display:inline-block;
@@ -11,11 +14,12 @@
   h2 {
     display: inline-block;
     font-size: 1.25em;
+    margin: 0;
   }
 
   #chat-btn {
     width:max-content ;
-    height: min-content;
+    height: 42px;
     border-radius: 4px;
     float: right;
     background-color: lightgrey;
@@ -28,3 +32,19 @@
     margin-left: 9px;
     margin-bottom: 10px;
   }
+
+  .recipient {
+    font-weight: 300;
+    font-size: medium;
+    margin-top: 8px;
+  }
+
+  .back {
+    margin-right: 16px;
+  }
+
+i {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}

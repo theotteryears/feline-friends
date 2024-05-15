@@ -4,12 +4,13 @@
 
 h2 {
   font-family: $body-font;
-  margin-bottom: 16px;
+
 }
 
 h1 {
   font-size: 32px;
   font-family: $headers-font;
+  margin-left: 8px;
   }
 
 .messages-form {
@@ -47,6 +48,7 @@ h1 {
   justify-content: flex-end;
   width: 100%;
   height: 100%;
+  margin-top: 0;
 }
 
 #rate-cat {
@@ -63,27 +65,35 @@ h1 {
 .cat-chat-link {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 8px;
   background: white;
-  padding: 8px 16px;
-  border: 1px solid rgb(235,235,235);
+  padding: 16px 16px;
 }
 
 .content {
   flex-grow: 1;
-  padding-left: 170px;
   display: flex;
   flex-direction: right;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin: 0;
   line-height: 1.4;
   color: #999999;
   font-weight: bold;
   align-items: center;
+  p{
+    margin: 0;
+    font-size: smaller;
+  }
 }
 
-.title h2 {
+.title {
   margin: 0;
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight:500;
+  }
 }
 
 .avatar {

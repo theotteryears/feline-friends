@@ -2,15 +2,27 @@
 
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+
+    <%= link_to chatrooms_path do %>
+      <i class="fa-solid fa-arrow-left back"></i>
+    <% end %>
     <div class="img-pair">
       <% if @chatroom.match.cat.img_1.attached? %>
         <%= cl_image_tag(@chatroom.match.cat.img_1.key, height: 40, width: 40, crop: "fill", class: "avatar")%>
       <% end %>
-      <% if @chatroom.match.cat.user.img.attached? %>
-        <%= cl_image_tag(@chatroom.match.cat.user.img.key, height: 40, width: 40, crop: "fill", class: "half-img avatar")%>
+      <% if current_user.role == "cat_owner" %>
+        <% if @chatroom.match.user.img.attached? %>
+          <%= cl_image_tag(@chatroom.match.user.img.key, height: 40, width: 40, crop: "fill", class: "half-img avatar")%>
+        <% end %>
+      <% else %>
+        <% if @chatroom.match.cat.user.img.attached? %>
+          <%= cl_image_tag(@chatroom.match.cat.user.img.key, height: 40, width: 40, crop: "fill", class: "half-img avatar")%>
+        <% end %>
       <% end %>
-      <h2><%= @chatroom.match.cat.name %>(<%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %>)</h2>
+      <h2><%= @chatroom.match.cat.name %></h2>
+      <h2 class="recipient" >(<%= current_user == @chatroom.match.user ? @chatroom.match.cat.user.first_name : @chatroom.match.user.first_name %>)</h2>
     </div>
+ 
 
 
 
