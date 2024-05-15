@@ -24,7 +24,11 @@ class MatchesController < ApplicationController
         match_id: @match.id
       )
       flash.notice = "Match request sent!"
-      redirect_to cats_path(match_cat_id: @match.cat_id)
+      if params[:top] == "true"
+        redirect_to top_cats_path(match_cat_id: @cat.id)
+      else
+        redirect_to cats_path(match_cat_id: @match.cat_id)
+      end
     end
   end
 
