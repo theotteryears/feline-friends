@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :messages, only: :create
     resources :ratings, only: [:new, :create]
     resources :matches, only: [:index]
+    resources :cats, only: [:index]
   end
   resources :notifications, only: :show
 
