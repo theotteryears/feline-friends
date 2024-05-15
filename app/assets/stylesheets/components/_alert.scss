@@ -1,6 +1,8 @@
 .alert {
-  position: relative;
+  position: fixed;
   top: 0;
+  width: 96%;
+  text-align: center;
   z-index: 1000;
   background-color: $yellow;
   border: 1px solid $black;
