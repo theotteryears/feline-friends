@@ -1,13 +1,17 @@
 .btn-signup {
   text-align: center;
+  text-align: center;
+  border: 2px solid $black;
   width: 6.5rem;
   height: 3rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   background: $blue;
   color: $white;
   font-size: 1rem;
   font-weight: 500;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
   &:hover {
     background: darken($blue, 10%);
     color: $white;
@@ -16,14 +20,17 @@
 
 .btn-login {
   text-align: center;
+  border: 2px solid $black;
   width: 6.5rem;
   height: 3rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   background: $yellow;
   color: $white;
   font-size: 1rem;
   font-weight: 500;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
   &:hover {
     background: darken($yellow, 10%);
     color: $white;
@@ -33,13 +40,16 @@
 .btn-password {
   text-align: center;
   width: auto;
+  border: 2px solid $black;
   height: 3rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   background: $red;
   color: $white;
   font-size: 1rem;
   font-weight: 500;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
   &:hover {
     background: darken($red, 10%);
     color: $white;
@@ -48,14 +58,17 @@
 
 .btn-normal {
   text-align: center;
+  border: 2px solid $black;
   width: auto;
-  height: 3rem;
+  height: 4rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   background: $blue;
   color: $white;
   font-size: 1rem;
   font-weight: 500;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
   &:hover {
     background: darken($blue, 10%);
     color: $white;
@@ -65,16 +78,19 @@
 .btn-rate {
   text-align: center;
   align-self: center;
-  width: 50%;
+  border: 2px solid $black;
+  width: 70%;
   height: 3rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   background: $yellow;
   color: #FFFFFF;
   font-size: 1rem;
   font-weight: 500;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
   &:hover {
-    background: darken($blue, 10%);
+    background: darken($yellow, 10%);
     color: $white;
   }
 }
