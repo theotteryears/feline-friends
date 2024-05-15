@@ -1,21 +1,24 @@
 <div class="container mt-3 text-center">
   <h1>My Profile</h1>
-  <div class="d-flex justify-content-around mt-3 mb-3">
+  <div class="d-flex justify-content-center gap-5 mt-3 mb-3">
     <%= link_to "Edit", edit_user_registration_path, class: "btn btn-login" %>
     <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-password" %>
   </div>
-  <div class="mb-3">
+  <div class="d-flex justify-content-center gap-3 mb-5">
+    <div class="match-card-profile">
     <% if current_user.img.attached? %>
       <%= cl_image_tag current_user.img.key, class: "avatar-square" %>
     <% end %>
-  </div>
-  <div class="match-cards">
+    </div>
+     <div class="match-cards">
     <div class="match-card.trip">
       <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
-      <%= current_user.city %><br>
+      <br><%= current_user.city %><br><br>
       <%= current_user.email %>
     </div>
   </div>
+  </div>
+
   <div class="text-center mt-3">
     <h2>Your Past Matches</h2>
     <% @past_matches.each do |match| %>
@@ -30,7 +33,7 @@
               <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
             </dialog>
           <% else %>
-            <p>Sorry that your match request with <br><span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span><br>Maybe try another cat 😽</p>
+            <p>Sorry that your match request with <br><span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span><br><br>Maybe try another cat 😽</p>
           <% end %>
           </div>
         </div>
