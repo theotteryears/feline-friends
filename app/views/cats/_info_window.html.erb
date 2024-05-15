@@ -1,6 +1,6 @@
 <h2><%= link_to cat.name, cats_path(cat_id: cat.id) %></h2>
 <p>
 <% if cat.img_1.attached? %>
-  <%= cl_image_tag(cat.img_1.key, height: 200, width: 200, crop: "fill")%>
+  <%= link_to cl_image_tag(cat.img_1.key, height: 200, width: 200, crop: "fill"), cats_path(cat_id: cat.id) %>
 <% end %>
 </p>

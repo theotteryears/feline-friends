@@ -1,18 +1,43 @@
 <div class="container mt-3 text-center">
   <h1>My Profile</h1>
-  <div class="d-flex justify-content-around mt-3 mb-4">
+  <div class="d-flex justify-content-center gap-5 mt-3 mb-3">
     <%= link_to "Edit", edit_user_registration_path, class: "btn btn-login" %>
     <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-password" %>
   </div>
-  <div class="mb-3">
+  <div class="d-flex justify-content-center gap-3 mb-5">
+    <div class="match-card-profile">
     <% if current_user.img.attached? %>
       <%= cl_image_tag current_user.img.key, class: "avatar-square" %>
     <% end %>
+    </div>
+     <div class="match-cards">
+    <div class="match-card.trip">
+      <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
+      <br><%= current_user.city %><br><br>
+      <%= current_user.email %>
+    </div>
   </div>
-    <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
-    <p><%= current_user.email %> - <%= current_user.city %></p>
+  </div>
+
   <div class="text-center mt-3">
-    <h2><span class="text-blue">Past Matches</span></h2>
-    <p>Coming soon!</p>
+    <h2>Your Past Matches</h2>
+    <% @past_matches.each do |match| %>
+      <div class="match-cards">
+        <div class="match-card.trip mb-3" data-controller="modal">
+          <% if match.status == "accepted" %>
+            <p>Your match request with <br><span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span></p>
+            <div class="d-flex flex-column text-center">We hope you had a great time! <br>Please rate the cat 😻
+            <button data-action="click->modal#open" class="btn btn-rate mt-3">Rate <%= match.cat.name %></button>
+            <dialog data-modal-target="modal">
+              <%= render "shared/rating", rating: Rating.new, cat: match.cat %>
+              <button data-action="click->modal#close" class="btn btn-password mt-3">Close</button>
+            </dialog>
+            </div>
+          <% else %>
+            <p>Sorry that your match request with <br><span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span><br><br>Maybe try another cat 😽</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

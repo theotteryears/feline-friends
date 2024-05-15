@@ -14,6 +14,12 @@ class CatsController < ApplicationController
       @selected_cat = @cats.find(params[:cat_id])
       @cats = @cats.to_a.reject! {|cat| cat == @selected_cat}.unshift(@selected_cat)
     end
+
+    if params[:match_cat_id]
+      @match_cat = @cats.find(params[:match_cat_id])
+      # split @cats into two arrays, one from the beginning to the match_cat, and one from the match_cat to the end
+      @cats = @cats.to_a.slice(@cats.index(@match_cat)+1..-1) + @cats.to_a.slice(0...@cats.index(@match_cat))
+    end
     # @average_rating = @cat.ratings.average(:rating)
   end
 
