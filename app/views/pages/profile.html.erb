@@ -25,7 +25,7 @@
         <div class="match-cards">
           <div class="match-card.trip mb-3" data-controller="modal">
             <% if match.status == "accepted" %>
-              <p>Your match request with <span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span>. We hope you had a great time! <br>Please rate the cat 😻</p>
+              <p>Your match request with <span class="text-blue"><%= match.cat.name %></span> was <span class="text-red"><%= match.status %></span>. Please rate the cat 😻</p>
               <button data-action="click->modal#open" class="btn btn-rate mt-3">Rate <%= match.cat.name %></button>
               <dialog data-modal-target="modal">
                 <%= render "shared/rating", rating: Rating.new, cat: match.cat %>

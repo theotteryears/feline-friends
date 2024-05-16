@@ -10,7 +10,7 @@ h2 {
 h1 {
   font-size: 32px;
   font-family: $headers-font;
-  margin-left: 15px;
+  // margin-left: 15px;
   margin-top: 20px;
   }
 
@@ -112,4 +112,9 @@ h1 {
   display: flex;
   position: absolute;
   bottom: 70px;
+}
+
+.cat-name-pend {
+  margin-top: 13px;
+  font-size: medium;
 }
