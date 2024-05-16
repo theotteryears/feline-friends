@@ -24,7 +24,7 @@
 <% end %>
 
 <div class="pending" data-controller="modal">
-  <button data-action="click->modal#open" class="btn btn-normal mb-3">Pending</button>
+  <button data-action="click->modal#open" class="pending btn btn-normal mb-3">Pending</button>
   <dialog data-modal-target="modal">
     <%= render "shared/matches", cat: @cat %>
 
