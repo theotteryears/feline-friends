@@ -22,8 +22,8 @@
   // padding: 24px;
   margin-top: 2%;
   background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  // border-radius: 2px;
+  // box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 }
 
 .cat-card-title {
@@ -48,7 +48,8 @@
   width: 100%;
   height: 65dvh;
   justify-content: center;
-  border-radius: 2%;
+  border: 3px solid black;
+  // border-radius: 2%;
   img {
     vertical-align: middle;
     height: 100%;
@@ -67,17 +68,20 @@
 .cat-card-actions {
   display: flex;
   position: absolute;
+  width: 100%;
   // left: 0.5rem;
-  justify-content: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  justify-content: space-between;
   bottom: 3%;
-  flex-wrap: wrap;
-  gap: 8px;
+  // flex-wrap: wrap;
+  // gap: 8px;
   // z-index: 2;
 }
 
 .btn-paw {
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid black;
   height: 50px;
   width: 50px;
   // margin-right: 5px;
@@ -89,7 +93,7 @@
 
 .btn-trash {
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid black;
   height: 50px;
   width: 50px;
   background-color: rgba(0,0,0,0.2);
@@ -99,11 +103,12 @@
 
 .cat-card-details {
   text-align: left;
-  padding-top: 10px;
+  padding: 10px;
   // padding-left: 24px;
   // padding-bottom: 10px;
   // padding-right: 24px;
-  border-top: 0.5px lightgray solid;
+  // border-top: 0.5px lightgray solid;
+  border: 1px solid black;
   line-height: 2;
   font-family: "Zen Kaku Gothic New";
   font-size: 1.1rem;
@@ -121,6 +126,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin:0;
   }
 }
 
