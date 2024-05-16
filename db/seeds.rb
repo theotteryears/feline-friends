@@ -35,6 +35,21 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/2
 cat.img_1.attach(io: file, filename: "2.jpg", content_type: "image/jpg")
 cat.save
 
+cat = Cat.new(user: user2, name: "George", personality: "With fur as curly as a plate of spaghetti and eyes as wobbly as jelly, is our eccentric explorer. George's quirky charm and unorthodox methods keep us guessing at every turn.", age: Faker::Number.within(range: 1..10), breed: Faker::Creature::Cat.breed, address: "Coventry")
+file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/8.jpg")
+cat.img_1.attach(io: file, filename: "8.jpg", content_type: "image/jpg")
+cat.save
+
+cat = Cat.new(user: user2, name: "Ponyo", personality: "With fur that defies gravity and eyes that seem to peer into other dimensions, this feline oddity is like a visitor from another planet. This cat's antics never fail to entertain.", age: 6, breed: Faker::Creature::Cat.breed, address: "Brighton")
+file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/9.jpg")
+cat.img_1.attach(io: file, filename: "9.jpg", content_type: "image/jpg")
+cat.save
+
+cat = Cat.new(user: user2, name: "Sosuke", personality: "This enigmatic creature is a master of disguise, blending seamlessly into its surroundings like a chameleon in a rainbow factory.", age: Faker::Number.within(range: 1..10), breed: Faker::Creature::Cat.breed, address: "Hove")
+file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/10.jpg")
+cat.img_1.attach(io: file, filename: "10.jpg", content_type: "image/jpg")
+cat.save
+
 cat = Cat.new(user: user2, name: "Sophie", personality: "Meet Sophie, the elegant queen of our household. Her fur, as sleek as satin, and eyes, as green as the forest, radiate grace and charm.", age: 5, breed: Faker::Creature::Cat.breed, address: "Altstetten, Zurich")
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/3.jpg")
 cat.img_1.attach(io: file, filename: "3.jpg", content_type: "image/jpg")
@@ -58,21 +73,6 @@ cat.save
 cat = Cat.new(user: user2, name: "Lily", personality: "Lily, with fur as white as freshly fallen snow and eyes as bright as twinkling stars, is our little angel.", age: 3, breed: Faker::Creature::Cat.breed, address: "Wipkingen, Zurich")
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/7.jpg")
 cat.img_1.attach(io: file, filename: "7.jpg", content_type: "image/jpg")
-cat.save
-
-cat = Cat.new(user: user2, name: "George", personality: "With fur as curly as a plate of spaghetti and eyes as wobbly as jelly, is our eccentric explorer. George's quirky charm and unorthodox methods keep us guessing at every turn.", age: Faker::Number.within(range: 1..10), breed: Faker::Creature::Cat.breed, address: "Coventry")
-file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/8.jpg")
-cat.img_1.attach(io: file, filename: "8.jpg", content_type: "image/jpg")
-cat.save
-
-cat = Cat.new(user: user2, name: "Ponyo", personality: "With fur that defies gravity and eyes that seem to peer into other dimensions, this feline oddity is like a visitor from another planet. This cat's antics never fail to entertain.", age: 6, breed: Faker::Creature::Cat.breed, address: "Brighton")
-file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/9.jpg")
-cat.img_1.attach(io: file, filename: "9.jpg", content_type: "image/jpg")
-cat.save
-
-cat = Cat.new(user: user2, name: "Sosuke", personality: "This enigmatic creature is a master of disguise, blending seamlessly into its surroundings like a chameleon in a rainbow factory.", age: Faker::Number.within(range: 1..10), breed: Faker::Creature::Cat.breed, address: "Hove")
-file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/10.jpg")
-cat.img_1.attach(io: file, filename: "10.jpg", content_type: "image/jpg")
 cat.save
 
 cat = Cat.new(user: user2, name: "Jean-Claude", personality: "With a fur coat that rivals the fluffiness of a cumulus cloud and a penchant for avant-garde interpretive dance, this cat is a true eccentric.", age: 10, breed: Faker::Creature::Cat.breed, address: "Paris")
