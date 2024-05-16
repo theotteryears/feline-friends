@@ -25,7 +25,7 @@ user2.save
 
 puts 'Creating Cats'
 
-cat = Cat.new(user: user2, name: "Milo", personality: "With fur as fluffy as a cloud and eyes that gleam like polished amber, Milo is our cuddly companion. Milo fills our home with warmth and love.", age: 1, breed: Faker::Creature::Cat.breed, address: "Hardbrucke, Zurich")
+cat = Cat.new(user: user2, name: "Milo", personality: "With fur as fluffy as a cloud and eyes that gleam like polished amber, Milo is our cuddly companion. Milo fills our home with warmth and love.", age: 1, breed: Faker::Creature::Cat.breed, address: "London")
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/1.jpg")
 cat.img_1.attach(io: file, filename: "1.jpg", content_type: "image/jpg")
 cat.save
@@ -65,7 +65,7 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/8
 cat.img_1.attach(io: file, filename: "8.jpg", content_type: "image/jpg")
 cat.save
 
-cat = Cat.new(user: user2, name: "Ponyo", personality: "With fur that defies gravity and eyes that seem to peer into other dimensions, this feline oddity is like a visitor from another planet. This cat's antics never fail to entertain.", age: 6, breed: Faker::Creature::Cat.breed, address: "Zurich")
+cat = Cat.new(user: user2, name: "Ponyo", personality: "With fur that defies gravity and eyes that seem to peer into other dimensions, this feline oddity is like a visitor from another planet. This cat's antics never fail to entertain.", age: 6, breed: Faker::Creature::Cat.breed, address: "Brighton")
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/9.jpg")
 cat.img_1.attach(io: file, filename: "9.jpg", content_type: "image/jpg")
 cat.save
@@ -80,7 +80,7 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/1
 cat.img_1.attach(io: file, filename: "11.jpg", content_type: "image/jpg")
 cat.save
 
-cat = Cat.new(user: user2, name: "Dareos", personality: "This mysterious feline luminary is a creature of the shadows, emerging from the depths of the wardrobe like a nocturnal ninja. This cat's clandestine activities and covert operations would put even the most seasoned spy to shame.", age: 2, breed: Faker::Creature::Cat.breed, address: "BN1 1GE")
+cat = Cat.new(user: user2, name: "Dareos", personality: "This mysterious feline luminary is a creature of the shadows, emerging from the depths of the wardrobe like a nocturnal ninja. This cat's clandestine activities and covert operations would put even the most seasoned spy to shame.", age: 2, breed: Faker::Creature::Cat.breed, address: "Aussersihl, Zurich")
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/12.jpg")
 cat.img_1.attach(io: file, filename: "12.jpg", content_type: "image/jpg")
 cat.save
@@ -125,7 +125,7 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/2
 cat.img_1.attach(io: file, filename: "20.jpg", content_type: "image/jpg")
 cat.save
 
-cat = Cat.new(user: user2, name: "Jess", personality: "With a fur coat that shimmers like moonlight on a still lake and eyes that flicker with the wisdom of the ages, this cat is a creature of mystery and magic.", age: 5, breed: Faker::Creature::Cat.breed, address: "Brighton")
+cat = Cat.new(user: user2, name: "Jess", personality: "With a fur coat that shimmers like moonlight on a still lake and eyes that flicker with the wisdom of the ages, this cat is a creature of mystery and magic.", age: 5, breed: Faker::Creature::Cat.breed, address: "Zurich")
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/21.jpg")
 cat.img_1.attach(io: file, filename: "21.jpg", content_type: "image/jpg")
 cat.save
@@ -152,6 +152,10 @@ Rating.create!(rating: 5, cat_id: 21)
 Rating.create!(rating: 5, cat_id: 21)
 Rating.create!(rating: 5, cat_id: 21)
 Rating.create!(rating: 5, cat_id: 21)
+Rating.create!(rating: 5, cat_id: 21)
+
+puts 'Creating ratings for other cats'
+
 
 
 
