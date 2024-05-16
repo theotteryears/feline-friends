@@ -3,11 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 // Define fonts for body and headers
 $body-font: "Zen Kaku Gothic New", "Helvetica", "sans-serif";
-$headers-font: "Dosis", "Helvetica", "sans-serif";
+$headers-font: "Public Sans";
+
+
 // $headers-font: "Galada", "cursive";
 
 // To use a font file (.woff) uncomment following lines
