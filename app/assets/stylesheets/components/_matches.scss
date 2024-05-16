@@ -1,11 +1,12 @@
 .match-cards {
   display: grid;
   grid-template-columns: 1fr;
+  justify-content: center;
   padding: 1rem;
-  border-radius: 0.25rem;
+  // border-radius: 0.25rem;
   margin: 1rem 0;
-  border: 1px solid black;
-  box-shadow: 4px 4px black;
+  border: 2px solid black;
+
 }
 
 .match-cards-profile {
@@ -16,16 +17,18 @@
 }
 
 .match-card-trip {
+  display: flex;
+  justify-content: flex-start;
   overflow: hidden;
-  height: auto;
+  height: fit-content;
   background: white;
+  margin: 0;
 }
 
 
 .match-card-trip h1 {
   font-size: 24px;
   font-weight: bold;
-  margin: 0;
 }
 
 .match-card-trip p {
