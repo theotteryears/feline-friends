@@ -39,7 +39,7 @@
             <% end %>
               <% unless cat.ratings.average(:rating).nil? %>
                 <% rating = cat.ratings.average(:rating) %>
-                <p>Rated: <span><%= rating.round(1) %></span> from <span><%= cat.ratings.count %></span> reviews</p>
+                <p>Rated: <span><%= rating.round(1) %></span> from <span><%= cat.ratings.count %></span> <%= cat.ratings.count == 1 ? "review" : "reviews" %></p>
               <% else %>
                 <p><span id="red" style="font-family: Dosis; font-size: 1.1rem; font-weight: 700;">Not rated yet</span></p>
               <% end %>
