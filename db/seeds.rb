@@ -60,8 +60,8 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/4
 cat.img_1.attach(io: file, filename: "4.jpg", content_type: "image/jpg")
 cat.save
 
-cat = Cat.new(user: user2, name: "David", personality: "David, the mighty lion of our household, has fur as majestic as a mane and eyes that burn with fiery intensity.", age: 4, breed: Faker::Creature::Cat.breed, address: "Enge, Zurich")
-file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/5.jpg")
+cat = Cat.new(user: user2, name: "David", personality: "Techno lover. Wow - this cat likes to party!", age: 4, breed: Faker::Creature::Cat.breed, address: "Enge, Zurich")
+file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715842030/5.jpg")
 cat.img_1.attach(io: file, filename: "5.jpg", content_type: "image/jpg")
 cat.save
 
@@ -135,8 +135,8 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/2
 cat.img_1.attach(io: file, filename: "22.jpg", content_type: "image/jpg")
 cat.save
 
-cat = Cat.new(user: user2, name: "Henry", personality: "Techno lover. Wow - this cat likes to party", age: 3, breed: Faker::Creature::Cat.breed, address: "Norwich")
-file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715691432/23.jpg")
+cat = Cat.new(user: user2, name: "Henry", personality: "Henry, the mighty lion of our household, has fur as majestic as a mane and eyes that burn with fiery intensity.", age: 3, breed: Faker::Creature::Cat.breed, address: "Norwich")
+file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1715718867/23.jpg")
 cat.img_1.attach(io: file, filename: "23.jpg", content_type: "image/jpg")
 cat.save
 
