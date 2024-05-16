@@ -231,7 +231,7 @@ chatroom.save
 chatroom = Chatroom.new(name: "Ponyo", match: Match.fifth)
 chatroom.save
 
-chatroom = Chatroom.new(name: "Sosuke", match: Match.sixth)
+chatroom = Chatroom.new(name: "Sosuke", match: match)
 chatroom.save
 
 puts 'Finished seeding'
