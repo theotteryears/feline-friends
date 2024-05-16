@@ -11,10 +11,10 @@
               <div class="cat-picture">
                 <%= cl_image_tag(cat.img_1.key) %>
                   <div class="cat-card-actions">
+                    <button class="btn-trash"><i  data-action="click->match#next"  data-id="<%=index%>" class="fa-solid fa-xmark"></i></button>
                     <%= button_to cat_matches_path(cat), class: "btn-paw", data: {turbo_method: :post} do %>
                       <i class="fa-solid fa-paw"></i>
                     <% end %>
-                    <button class="btn-trash"><i  data-action="click->match#next"  data-id="<%=index%>" class="fa-solid fa-xmark"></i></button>
                   </div>
               </div>
               <% end %>
@@ -23,7 +23,7 @@
             <p><%= cat.personality%><br/>
             <hr>
             <span id="red" style="font-family: Dosis; font-size: 1.1rem; font-weight: 700;">Breed:</span> <%= cat.breed %><br/>
-            <span id="red" style="font-family: Dosis; font-size: 1.1rem; font-weight: 700;">Age:</span> <%= cat.age %>
+            <span id="red" style="font-family: Dosis; font-size: 1.1rem; font-weight: 700;">Age:</span> <%= cat.age %><br/>
             <%if cat.ratings.average(:rating) != nil %>
               <% average_rating_floor = cat.ratings.average(:rating).to_i %>
               <% average_rating_decimal = cat.ratings.average(:rating) - average_rating_floor %>

@@ -11,6 +11,12 @@
   border-radius: 25px;
 }
 
+.profile-upper-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .card-trip img {
   height: 50dvh;
   width: 100%;
