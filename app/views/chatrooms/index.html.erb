@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Chats</h1>
 
 <% @chatrooms.each do |chatroom| %>
@@ -5,7 +6,7 @@
     <div class="match-cards">
       <a href="<%= chatroom_path(chatroom) %>" class="card.trip cat-chat-link">
       <% if chatroom.match.cat.img_1.attached? %>
-        <%= cl_image_tag(chatroom.match.cat.img_1.key, height: 40, width: 40, crop: "fill", class: "avatar")%>
+        <%= cl_image_tag(chatroom.match.cat.img_1.key, class: "avatar")%>
       <% end %>
       <div class="title">
         <h2><%= current_user == chatroom.match.user ? chatroom.match.cat.name : chatroom.match.user.first_name %></h2>
@@ -19,7 +20,6 @@
       </div>
       </a>
     </div>
-    </div>
   <% end %>
 <% end %>
 
@@ -29,4 +29,5 @@
     <%= render "shared/matches", cat: @cat %>
 
   </dialog>
+</div>
 </div>
