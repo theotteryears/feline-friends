@@ -148,6 +148,7 @@ Rating.create!(rating: 5, cat_id: 12)
 Rating.create!(rating: 5, cat_id: 12)
 Rating.create!(rating: 5, cat_id: 12)
 Rating.create!(rating: 5, cat_id: 12)
+
 Rating.create!(rating: 5, cat_id: 21)
 Rating.create!(rating: 5, cat_id: 21)
 Rating.create!(rating: 5, cat_id: 21)
@@ -156,8 +157,53 @@ Rating.create!(rating: 5, cat_id: 21)
 
 puts 'Creating ratings for other cats'
 
+Rating.create!(rating: 4, cat_id: 1)
+Rating.create!(rating: 3, cat_id: 1)
 
+Rating.create!(rating: 4, cat_id: 2)
+Rating.create!(rating: 4, cat_id: 2)
 
+Rating.create!(rating: 3, cat_id: 3)
+Rating.create!(rating: 3, cat_id: 3)
+Rating.create!(rating: 4, cat_id: 3)
+Rating.create!(rating: 4, cat_id: 3)
+
+Rating.create!(rating: 4, cat_id: 4)
+Rating.create!(rating: 4, cat_id: 4)
+Rating.create!(rating: 4, cat_id: 4)
+
+Rating.create!(rating: 3, cat_id: 5)
+Rating.create!(rating: 4, cat_id: 5)
+Rating.create!(rating: 3, cat_id: 5)
+
+Rating.create!(rating: 2, cat_id: 6)
+Rating.create!(rating: 4, cat_id: 6)
+Rating.create!(rating: 5, cat_id: 6)
+
+Rating.create!(rating: 2, cat_id: 7)
+Rating.create!(rating: 4, cat_id: 7)
+Rating.create!(rating: 5, cat_id: 7)
+
+Rating.create!(rating: 2, cat_id: 8)
+Rating.create!(rating: 4, cat_id: 8)
+Rating.create!(rating: 4, cat_id: 9)
+Rating.create!(rating: 2, cat_id: 10)
+Rating.create!(rating: 4, cat_id: 11)
+Rating.create!(rating: 3, cat_id: 11)
+
+Rating.create!(rating: 4, cat_id: 13)
+Rating.create!(rating: 3, cat_id: 13)
+Rating.create!(rating: 4, cat_id: 14)
+Rating.create!(rating: 4, cat_id: 14)
+Rating.create!(rating: 5, cat_id: 15)
+Rating.create!(rating: 3, cat_id: 15)
+Rating.create!(rating: 4, cat_id: 16)
+Rating.create!(rating: 3, cat_id: 17)
+Rating.create!(rating: 2, cat_id: 18)
+Rating.create!(rating: 3, cat_id: 19)
+Rating.create!(rating: 4, cat_id: 20)
+Rating.create!(rating: 4, cat_id: 22)
+Rating.create!(rating: 3, cat_id: 23)
 
 puts 'Creating Matches'
 
