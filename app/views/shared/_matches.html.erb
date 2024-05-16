@@ -27,7 +27,7 @@
         <% if match.cat.img_1.attached? %>
           <%= link_to cl_image_tag(match.cat.img_1.key, height: 40, width: 40, class: "avatar"), cats_path(cat_id: match.cat.id) %>
         <% end %>
-        <h3><%= link_to match.cat.name, cats_path(cat_id: match.cat.id) %></h3>
+        <h3 class="cat-name-pend"><%= link_to match.cat.name, cats_path(cat_id: match.cat.id) %></h3>
       </div>
     </div>
   <% end %>
