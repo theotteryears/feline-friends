@@ -176,6 +176,10 @@ Rating.create!(rating: 4, cat_id: 6)
 Rating.create!(rating: 3, cat_id: 6)
 Rating.create!(rating: 4, cat_id: 7)
 Rating.create!(rating: 3.5, cat_id: 8)
+Rating.create!(rating: 4, cat_id: 8)
+Rating.create!(rating: 4, cat_id: 9)
+Rating.create!(rating: 5, cat_id: 9)
+Rating.create!(rating: 4, cat_id: 9)
 Rating.create!(rating: 4, cat_id: 9)
 Rating.create!(rating: 3.5, cat_id: 10)
 Rating.create!(rating: 4.5, cat_id: 11)
@@ -198,7 +202,21 @@ puts 'Creating Matches'
 match = Match.new(cat: Cat.last, user: User.first, status: "accepted")
 match.save
 
-match = Match.new(cat: Cat.second, user: User.first, status: "declined")
+match = Match.new(cat: Cat.third, user: User.first, status: "declined")
 match.save
+
+match = Match.new(cat: Cat.first, user: User.first, status: "accepted")
+match.save
+
+match = Match.new(cat: Cat.second, user: User.first, status: "accepted")
+match.save
+
+puts 'Creating Chatrooms'
+
+chatroom = Chatroom.new(name: "Milo", match: Match.third)
+chatroom.save
+
+chatroom = Chatroom.new(name: "Luna", match: Match.fourth)
+chatroom.save
 
 puts 'Finished seeding'
