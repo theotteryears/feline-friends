@@ -8,8 +8,10 @@
 
 .heart-cat {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-center;
+  align-items: center;
   position: absolute;
   bottom: 10;
   right: 0;
+  margin-right: 16px;
 }

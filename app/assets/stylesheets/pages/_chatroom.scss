@@ -10,9 +10,17 @@ h2 {
 h1 {
   font-size: 32px;
   font-family: $headers-font;
-  margin-left: 8px;
+  margin-left: 15px;
+  margin-top: 20px;
   }
 
+  .pending {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    height: min-content;
+    right: 10px;
+  }
 .messages-form {
   display: flex;
   flex-direction: column;
