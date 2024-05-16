@@ -154,6 +154,10 @@ Rating.create!(rating: 5, cat_id: 21)
 Rating.create!(rating: 5, cat_id: 21)
 Rating.create!(rating: 5, cat_id: 21)
 Rating.create!(rating: 5, cat_id: 21)
+Rating.create!(rating: 5, cat_id: 21)
+Rating.create!(rating: 5, cat_id: 21)
+Rating.create!(rating: 5, cat_id: 21)
+Rating.create!(rating: 5, cat_id: 21)
 
 puts 'Creating ratings for other cats'
 
