@@ -35,6 +35,23 @@
   margin: 0;
 }
 
+.remove {
+  display: flex;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.gl-star-rating {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.form-label .select .required {
+  color: transparent; /* make the text invisible */
+  user-select: none;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
