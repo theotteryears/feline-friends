@@ -211,12 +211,18 @@ match.save
 match = Match.new(cat: Cat.second, user: User.first, status: "accepted")
 match.save
 
+match = Match.new(cat: Cat.fourth, user: User.first, status: "accepted")
+match.save
+
 puts 'Creating Chatrooms'
 
 chatroom = Chatroom.new(name: "Milo", match: Match.third)
 chatroom.save
 
 chatroom = Chatroom.new(name: "Luna", match: Match.fourth)
+chatroom.save
+
+chatroom = Chatroom.new(name: "Ponyo", match: Match.fifth)
 chatroom.save
 
 puts 'Finished seeding'
